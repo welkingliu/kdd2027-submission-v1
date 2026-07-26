@@ -1,4 +1,4 @@
-\documentclass[sigconf,review,anonymous]{acmart}
+\documentclass[sigconf,review]{acmart}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -52,12 +52,33 @@
 
 \title{GroundedSGG-Bench: Benchmarking Object-Identity Grounding and Identity--Relation Coupling in Scene Graph Generation}
 
-% \author{Author Name}
-% \affiliation{%
-%   \institution{Institution}
-%   \city{City}
-%   \country{Country}}
-% \email{author@example.com}
+\author{Chenhui Liu}
+\affiliation{%
+  \institution{Fudan University}
+  \city{Shanghai}
+  \country{China}}
+\email{25110980014@m.fudan.edu.cn}
+
+\author{Yujie Zheng}
+\affiliation{%
+  \institution{Fudan University}
+  \city{Shanghai}
+  \country{China}}
+\email{22300160050@m.fudan.edu.cn}
+
+\author{Weiguo Zheng}
+\affiliation{%
+  \institution{Fudan University}
+  \city{Shanghai}
+  \country{China}}
+\email{zhengweiguo@fudan.edu.cn}
+
+\author{Shiping Tang}
+\affiliation{%
+  \institution{Fudan University}
+  \city{Shanghai}
+  \country{China}}
+\email{twukong@fudan.edu.cn}
 
 \begin{abstract}
 Scene graph generation (SGG) is summarized by triplet recall,
@@ -77,12 +98,11 @@ points for Motifs and \keynum{42.5} for a Transformer, more than
 unrelated-node masking. A 20-motif audit shows that aggregate invariance
 (86.2--88.9\%) is dominated by stable wrong predictions: clean-correct
 persistence is only \keynum{1.05--1.74\%}, \keynum{51.3--57.9} points below
-matched controls. Across 11 full-split SGDet runs from nine model families,
-localization and grounded-object rates expose bottlenecks hidden by end-to-end
-scores. Three-seed TDE-Motifs tuning improves object Top-1 by 0.48--0.50 points
-and reduces ECE from 17.87\% to 2.68--3.22\%, but has no stable grounding
-advantage over supervised control; the selected checkpoint also reduces SGDet
-mR@50 by \keynum{6.35} points. Overall, \textsc{GroundedSGG-Bench} provides a
+matched controls. Across 11 full-split SGDet runs, grounded-object rates expose
+bottlenecks hidden by end-to-end scores. Three-seed TDE-Motifs tuning improves
+object Top-1 and calibration, but has no stable grounding advantage over
+supervised control; the selected checkpoint reduces SGDet mR@50 by
+\keynum{6.35} points. Overall, \textsc{GroundedSGG-Bench} provides a
 systematic framework for separating spatial support, visual identity, and
 relation reasoning quality, avoiding misleading comparisons caused by
 collapsing heterogeneous datasets and evaluation settings into a single
@@ -112,14 +132,13 @@ foundation models, robustness, data-centric evaluation}
 
 \begin{document}
 \maketitle
+\renewcommand{\shortauthors}{Liu et al.}
 
-\begin{center}
-\footnotesize
-\textbf{Anonymous artifact:}
+\noindent\footnotesize
+\textbf{Artifact:}
 \href{https://anonymous.4open.science/r/kdd2027-submission-v1-CA7D/README.md}
-{\nolinkurl{anonymous.4open.science/r/kdd2027-submission-v1-CA7D/README.md}}
-\end{center}
-\vspace{-0.5em}
+{Code, manifests, and reproduction instructions.}
+\par\normalsize\smallskip
 
 \section{Introduction}
 
@@ -350,15 +369,6 @@ The image is the resampling unit. For perturbation experiments, intervention see
 
 Cross-model analyses are restricted to results sharing a dataset, task, ontology, and endpoint definition. Stage III persistence rates are not pooled with Stage V because mitigation checkpoints do not rerun the motif audit. Mediation language is used only when intervention, mediator, and outcome meet the stated temporal and identification assumptions; otherwise the manuscript says ``association'' and reports the controlled contrast directly.
 
-\paragraph{Recommended reporting unit.}
-To prevent the benchmark from becoming a single cross-dataset leaderboard,
-each result binds the dataset and ontology, task, support definition, identity
-metric, relation metric, coverage, and asset provenance. Native comparisons
-are restricted to compatible dataset blocks; transfer claims use only the
-registered exact-overlap diagnostic. This unit distinguishes missing support
-from measured failure and makes apparent gains traceable to localization,
-identity, relation reasoning, or calibration.
-
 \section{Benchmark Findings}
 \label{sec:results}
 
@@ -471,8 +481,8 @@ tuning improves object calibration and SGCls-aligned metrics, including on
 exact-overlap GQA and VRD subsets, but grounding is not consistently better
 than supervised control and the selected checkpoint degrades SGDet. The
 benchmark therefore supports separate reporting of localization, identity,
-and relation quality rather than a single end-to-end score. The anonymous
-reviewer artifact provides the experiment contracts, manifests, and
+and relation quality rather than a single end-to-end score. The reviewer
+artifact provides the experiment contracts, manifests, and
 one-command reproduction entry points used here while retaining upstream data
 and checkpoints under their original terms; it is available at
 \href{https://anonymous.4open.science/r/kdd2027-submission-v1-CA7D/}{the
