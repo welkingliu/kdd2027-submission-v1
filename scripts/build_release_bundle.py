@@ -51,6 +51,9 @@ PAPER_FILES = (
     "tex/kdd2027_submission/figures/experiment3_motif_intervention.pdf",
     "tex/kdd2027_submission/figures/experiment3_motif_intervention.png",
     "tex/kdd2027_submission/figures/generate_experiment3_motif_intervention.py",
+    "tex/kdd2027_submission/figures/appendix_result_summary.pdf",
+    "tex/kdd2027_submission/figures/appendix_result_summary.png",
+    "tex/kdd2027_submission/figures/generate_appendix_result_summary.py",
 )
 RESULT_DIRS = {
     "experiment_1a/psg": (

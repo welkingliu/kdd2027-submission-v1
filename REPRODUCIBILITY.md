@@ -8,6 +8,14 @@ and prediction caches. Image batch size is one. The PySGG and historical model
 repositories use isolated environments because their CUDA and framework
 requirements differ.
 
+The submitted runs used a Linux Mint 22.2 server with kernel
+`6.14.0-36-generic`, an Intel Xeon Silver 4210R CPU, 125 GiB system memory, and
+two NVIDIA GeForce RTX 3090 GPUs with 24,576 MiB each. The recorded host stack
+was NVIDIA driver `580.95.05`, CUDA toolkit `12.0.140`, and Python `3.12.3`.
+Model-specific environments remain isolated and are recorded per run; the host
+Python and CUDA versions are orchestration metadata, not a claim that every
+legacy model uses one shared framework stack.
+
 Create the main environment:
 
 ```bash
