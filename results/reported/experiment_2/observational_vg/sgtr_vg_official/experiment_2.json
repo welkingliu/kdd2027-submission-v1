@@ -1,0 +1,243 @@
+{
+  "analysis_scope": "observational",
+  "causal_claims": "association_only",
+  "config": {
+    "analysis_scope": "observational",
+    "data_root": "${PROJECT_ROOT}/data/vg/v1.4",
+    "dataset": "vg",
+    "device": "cpu",
+    "eval_ann": null,
+    "eval_samples": 1000000000,
+    "image_root": null,
+    "minimum_clean_recall": 0.01,
+    "minimum_pvr_checked": 100,
+    "minimum_relations": 200,
+    "official_manifest": [
+      "${PROJECT_ROOT}/checkpoints/sgg/manifests/sgtr_vg.json"
+    ],
+    "output_dir": "${PROJECT_ROOT}/artifacts/experiment_2/mac_cpu_queue_20260721_144107_vg_observational_full/vg/sgtr_vg_official",
+    "pair_hit_ks": [
+      1,
+      5,
+      10
+    ],
+    "panoptic_root": null,
+    "perturbation_levels": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "perturbation_seeds": [
+      17,
+      29,
+      43
+    ],
+    "perturbation_strategies": [
+      "key_node_mask",
+      "random_node_mask",
+      "unrelated_node_mask",
+      "on_manifold_replacement"
+    ],
+    "primary_k": 5,
+    "seed": 17,
+    "skip_pair_audit": false,
+    "skip_physical_consistency": false,
+    "train_ann": null,
+    "train_samples": 5000
+  },
+  "dataset": "vg",
+  "dose_response_and_controls": null,
+  "experiment": "II_real_checkpoint_pair_grounding",
+  "metric_scope": "GT-pair diagnostic; standard image-level SGG metrics are Experiment IV",
+  "model_provenance": {
+    "sgtr_vg_official": {
+      "architecture_family": "SGTR",
+      "checkpoint_status": {
+        "execution_mode": "prediction_cache",
+        "loaded": true,
+        "metadata": {
+          "architecture_family": "SGTR",
+          "baseline_mR": 0.1231,
+          "checkpoints": {
+            "sgdet": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/weights/sgtr/vg/sgtr_vg_new_pth/model_0095999.pth",
+              "sha256": "73a96a8a7fd33ccca4b841411c2101c93d29185da4b8f69cb04076a9620e05fc"
+            }
+          },
+          "config": {
+            "prediction_cache_metadata_sha256": "efe27cf4b8cd52604d6b1f63a914f4f832bb46310d675964205a7515b7088491",
+            "prediction_cache_root": "${PROJECT_ROOT}/artifacts/prediction_cache/sgtr_vg",
+            "relation_score_mode": "independent_probabilities"
+          },
+          "diagnostic_task": "sgdet",
+          "environment_python": "${EXTERNAL_RUNTIME}/ASSET",
+          "execution_mode": "prediction_cache",
+          "factory": "sgg_core.models.prediction_cache:create_adapter",
+          "input_source": "official_prediction_cache",
+          "metric_scale": "fraction",
+          "mitigation_contract": {
+            "forward_grounding": false,
+            "mask_object_logits": false,
+            "object_logit_alignment": "sparse_queries",
+            "object_logits": false,
+            "relation_logit_alignment": "sparse_queries",
+            "trainable_grounding_parameters": false,
+            "trainable_object_parameters": false
+          },
+          "name": "sgtr_vg_official",
+          "ontology_ids": {
+            "vg": "vg150:27af736e1c912d3f"
+          },
+          "paradigm": "end_to_end_transformer",
+          "parameter_count": 95971527,
+          "perturbation_contract": {
+            "boxes_only": false,
+            "color_jitter": false,
+            "full": false,
+            "key_node_mask": false,
+            "noise": false,
+            "on_manifold_replacement": false,
+            "random_node_mask": false,
+            "swap": false,
+            "union_attenuation": false,
+            "union_zero": false,
+            "unrelated_node_mask": false,
+            "visual_noise": false
+          },
+          "reference_dataset": "vg",
+          "reference_eval_images": 26446,
+          "reference_metrics": {
+            "SGDet/R@50": 0.243,
+            "SGDet/mR@50": 0.1231
+          },
+          "reproduction_tolerance": 0.02,
+          "source_commit": "03bdd6554f12d521807cf95fe6a7daa7d3bb01dc",
+          "source_root": "${PROJECT_ROOT}/external/official_repos/SGTR",
+          "source_url": "https://github.com/Scarecrow0/SGTR.git",
+          "supported_datasets": [
+            "vg"
+          ],
+          "supported_tasks": [
+            "sgdet"
+          ],
+          "training_dataset": "VG-150",
+          "training_seed": 42
+        },
+        "parameter_count": 95971527,
+        "parameter_coverage": 1.0,
+        "path": "${PROJECT_ROOT}/checkpoints/sgg/weights/sgtr/vg/sgtr_vg_new_pth/model_0095999.pth",
+        "paths_by_task": {
+          "sgdet": "${PROJECT_ROOT}/checkpoints/sgg/weights/sgtr/vg/sgtr_vg_new_pth/model_0095999.pth"
+        },
+        "sha256": "73a96a8a7fd33ccca4b841411c2101c93d29185da4b8f69cb04076a9620e05fc",
+        "sha256_by_task": {
+          "sgdet": "73a96a8a7fd33ccca4b841411c2101c93d29185da4b8f69cb04076a9620e05fc"
+        },
+        "source_commit_verified": "03bdd6554f12d521807cf95fe6a7daa7d3bb01dc",
+        "source_provenance": {
+          "archive_path": "${PROJECT_ROOT}/external/official_archives/sgtr-03bdd6554f12d521807cf95fe6a7daa7d3bb01dc.tar.gz",
+          "archive_sha256": "e8cd669a26f076039a0cc989693457c7205c2ab8fedf491011e9ec89351f16e8",
+          "commit": "03bdd6554f12d521807cf95fe6a7daa7d3bb01dc",
+          "source_type": "official_commit_archive",
+          "source_url": "https://github.com/Scarecrow0/SGTR.git"
+        }
+      },
+      "implementation_kind": "official_prediction_cache",
+      "manifest_path": "${PROJECT_ROOT}/checkpoints/sgg/manifests/sgtr_vg.json",
+      "perturbation_contract": {
+        "boxes_only": false,
+        "color_jitter": false,
+        "full": false,
+        "key_node_mask": false,
+        "noise": false,
+        "on_manifold_replacement": false,
+        "random_node_mask": false,
+        "swap": false,
+        "union_attenuation": false,
+        "union_zero": false,
+        "unrelated_node_mask": false,
+        "visual_noise": false
+      },
+      "supported_tasks": [
+        "sgdet"
+      ]
+    }
+  },
+  "object_error_propagation": {
+    "sgtr_vg_official": {
+      "interpretation": "Association only: endpoint errors and relation errors share upstream causes. Use Experiment II interventions for stronger evidence.",
+      "status": "ok",
+      "tasks": {
+        "sgdet": {
+          "counts": {
+            "evaluable_relations": 32371,
+            "gt_relations": 183642,
+            "localized_endpoint_relations": 140764
+          },
+          "endpoint_and_pair_coverage": 0.1762723124339748,
+          "errors": [],
+          "groups": {
+            "both_correct": {
+              "bootstrap_95ci_Hit@1": [
+                0.5154026530265542,
+                0.5370071286180201
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.7780831903019725,
+                0.796282728006781
+              ],
+              "relation_Hit@1": 0.5260687918502833,
+              "relation_Hit@5": 0.7875579465460997,
+              "support": 17473
+            },
+            "both_wrong": {
+              "bootstrap_95ci_Hit@1": [
+                0.33763880500420373,
+                0.3877507483910993
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.6457278535341149,
+                0.6923613332325891
+              ],
+              "relation_Hit@1": 0.36257928118393234,
+              "relation_Hit@5": 0.6694855532064834,
+              "support": 2838
+            },
+            "one_wrong": {
+              "bootstrap_95ci_Hit@1": [
+                0.41023539350650223,
+                0.43384063255566213
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.7019366050428256,
+                0.7256018575011199
+              ],
+              "relation_Hit@1": 0.42197346600331676,
+              "relation_Hit@5": 0.7135157545605307,
+              "support": 12060
+            }
+          },
+          "localized_endpoint_coverage": 0.7665131070234478,
+          "num_images": 26446,
+          "status": "ok",
+          "task": "sgdet"
+        }
+      }
+    }
+  },
+  "pair_audit": null,
+  "pair_metric": "predicate Hit@K with K restricted below the predicate vocabulary size",
+  "physical_consistency": null,
+  "randomness_protocol": {
+    "base_perturbation_seeds": [
+      17,
+      29,
+      43
+    ],
+    "bootstrap_unit": "image after averaging perturbation seeds",
+    "per_image_seed_derivation": "base_seed + 1000003 * (image_index + 1)"
+  },
+  "scan_profile": "full_vg"
+}

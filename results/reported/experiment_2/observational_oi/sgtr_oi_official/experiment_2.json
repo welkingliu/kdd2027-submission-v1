@@ -1,0 +1,233 @@
+{
+  "analysis_scope": "observational",
+  "causal_claims": "association_only",
+  "config": {
+    "analysis_scope": "observational",
+    "data_root": "${PROJECT_ROOT}/data/openimages/open-images-v6",
+    "dataset": "oi",
+    "device": "cuda",
+    "eval_ann": null,
+    "eval_samples": 1000000000,
+    "image_root": null,
+    "minimum_clean_recall": 0.01,
+    "minimum_pvr_checked": 100,
+    "minimum_relations": 200,
+    "official_manifest": [
+      "${PROJECT_ROOT}/checkpoints/sgg/manifests/sgtr_oi.json"
+    ],
+    "output_dir": "${PROJECT_ROOT}/artifacts/experiment_2/exp2_observational_scheduled_20260718_210647/oi/oi/sgtr_oi_official",
+    "pair_hit_ks": [
+      1,
+      5,
+      10
+    ],
+    "panoptic_root": null,
+    "perturbation_levels": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "perturbation_seeds": [
+      17,
+      29,
+      43
+    ],
+    "primary_k": 5,
+    "seed": 17,
+    "train_ann": null,
+    "train_samples": 5000
+  },
+  "dataset": "oi",
+  "dose_response_and_controls": null,
+  "experiment": "II_real_checkpoint_pair_grounding",
+  "metric_scope": "GT-pair diagnostic; standard image-level SGG metrics are Experiment IV",
+  "model_provenance": {
+    "sgtr_oi_official": {
+      "architecture_family": "SGTR",
+      "checkpoint_status": {
+        "execution_mode": "prediction_cache",
+        "loaded": true,
+        "metadata": {
+          "architecture_family": "SGTR",
+          "baseline_mR": 0.539,
+          "checkpoints": {
+            "sgdet": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/weights/sgtr/oi/sgtr_oiv6_new/model_0107999.pth",
+              "sha256": "65b654e4704842631e5088a0d243fcc8d8cc3bc2d9f0e5d267dc5eb6083d82ea"
+            }
+          },
+          "config": {
+            "prediction_cache_metadata_sha256": "51923cc80c743510c30f61cb22aace3e048dabe59b5c03801696cbed9cc48ee8",
+            "prediction_cache_root": "${PROJECT_ROOT}/artifacts/prediction_cache/sgtr_oi",
+            "relation_score_mode": "categorical"
+          },
+          "diagnostic_task": "sgdet",
+          "environment_python": "${EXTERNAL_RUNTIME}/ASSET",
+          "execution_mode": "prediction_cache",
+          "factory": "sgg_core.models.prediction_cache:create_adapter",
+          "input_source": "official_prediction_cache",
+          "metric_scale": "fraction",
+          "mitigation_contract": {
+            "forward_grounding": false,
+            "mask_object_logits": false,
+            "object_logit_alignment": "sparse_queries",
+            "object_logits": false,
+            "relation_logit_alignment": "sparse_queries",
+            "trainable_grounding_parameters": false,
+            "trainable_object_parameters": false
+          },
+          "name": "sgtr_oi_official",
+          "ontology_ids": {
+            "oi": "openimages:572ecc689454803a"
+          },
+          "paradigm": "end_to_end_transformer",
+          "parameter_count": 96429821,
+          "perturbation_contract": {
+            "boxes_only": false,
+            "color_jitter": false,
+            "full": false,
+            "key_node_mask": false,
+            "noise": false,
+            "on_manifold_replacement": false,
+            "random_node_mask": false,
+            "swap": false,
+            "union_attenuation": false,
+            "union_zero": false,
+            "unrelated_node_mask": false,
+            "visual_noise": false
+          },
+          "reference_dataset": "oi",
+          "reference_eval_images": 1813,
+          "reference_metrics": {
+            "SGDet/R@50": 0.7234,
+            "SGDet/mR@50": 0.539
+          },
+          "reproduction_tolerance": 0.05,
+          "source_commit": "03bdd6554f12d521807cf95fe6a7daa7d3bb01dc",
+          "source_root": "${PROJECT_ROOT}/external/official_repos/SGTR",
+          "source_url": "https://github.com/Scarecrow0/SGTR.git",
+          "supported_datasets": [
+            "oi"
+          ],
+          "supported_tasks": [
+            "sgdet"
+          ],
+          "training_dataset": "Open Images V6",
+          "training_seed": 42
+        },
+        "parameter_count": 96429821,
+        "parameter_coverage": 1.0,
+        "path": "${PROJECT_ROOT}/checkpoints/sgg/weights/sgtr/oi/sgtr_oiv6_new/model_0107999.pth",
+        "paths_by_task": {
+          "sgdet": "${PROJECT_ROOT}/checkpoints/sgg/weights/sgtr/oi/sgtr_oiv6_new/model_0107999.pth"
+        },
+        "sha256": "65b654e4704842631e5088a0d243fcc8d8cc3bc2d9f0e5d267dc5eb6083d82ea",
+        "sha256_by_task": {
+          "sgdet": "65b654e4704842631e5088a0d243fcc8d8cc3bc2d9f0e5d267dc5eb6083d82ea"
+        },
+        "source_commit_verified": "03bdd6554f12d521807cf95fe6a7daa7d3bb01dc",
+        "source_provenance": {
+          "archive_path": "${PROJECT_ROOT}/external/official_archives/sgtr-03bdd6554f12d521807cf95fe6a7daa7d3bb01dc.tar.gz",
+          "archive_sha256": "e8cd669a26f076039a0cc989693457c7205c2ab8fedf491011e9ec89351f16e8",
+          "commit": "03bdd6554f12d521807cf95fe6a7daa7d3bb01dc",
+          "source_type": "official_commit_archive",
+          "source_url": "https://github.com/Scarecrow0/SGTR.git"
+        }
+      },
+      "implementation_kind": "official_prediction_cache",
+      "manifest_path": "${PROJECT_ROOT}/checkpoints/sgg/manifests/sgtr_oi.json",
+      "perturbation_contract": {
+        "boxes_only": false,
+        "color_jitter": false,
+        "full": false,
+        "key_node_mask": false,
+        "noise": false,
+        "on_manifold_replacement": false,
+        "random_node_mask": false,
+        "swap": false,
+        "union_attenuation": false,
+        "union_zero": false,
+        "unrelated_node_mask": false,
+        "visual_noise": false
+      },
+      "supported_tasks": [
+        "sgdet"
+      ]
+    }
+  },
+  "object_error_propagation": {
+    "sgtr_oi_official": {
+      "interpretation": "Association only: endpoint errors and relation errors share upstream causes. Use Experiment II interventions for stronger evidence.",
+      "status": "ok",
+      "tasks": {
+        "sgdet": {
+          "counts": {
+            "evaluable_relations": 469,
+            "gt_relations": 4951,
+            "localized_endpoint_relations": 4462
+          },
+          "endpoint_and_pair_coverage": 0.09472833770955362,
+          "errors": [],
+          "groups": {
+            "both_correct": {
+              "bootstrap_95ci_Hit@1": [
+                0.6119402985074627,
+                0.7439821105072463
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.9211725113398039,
+                0.9841269841269841
+              ],
+              "relation_Hit@1": 0.678391959798995,
+              "relation_Hit@5": 0.9547738693467337,
+              "support": 199
+            },
+            "both_wrong": {
+              "bootstrap_95ci_Hit@1": [
+                0.4492753623188406,
+                0.7258431085043986
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.8307692307692308,
+                0.9824561403508771
+              ],
+              "relation_Hit@1": 0.5909090909090909,
+              "relation_Hit@5": 0.9090909090909091,
+              "support": 66
+            },
+            "one_wrong": {
+              "bootstrap_95ci_Hit@1": [
+                0.5231347710776103,
+                0.6565800865800865
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.9526009930038366,
+                0.9948979591836735
+              ],
+              "relation_Hit@1": 0.5882352941176471,
+              "relation_Hit@5": 0.9754901960784313,
+              "support": 204
+            }
+          },
+          "localized_endpoint_coverage": 0.9012320743284185,
+          "num_images": 1813,
+          "status": "ok",
+          "task": "sgdet"
+        }
+      }
+    }
+  },
+  "pair_audit": null,
+  "pair_metric": "predicate Hit@K with K restricted below the predicate vocabulary size",
+  "physical_consistency": null,
+  "randomness_protocol": {
+    "base_perturbation_seeds": [
+      17,
+      29,
+      43
+    ],
+    "bootstrap_unit": "image after averaging perturbation seeds",
+    "per_image_seed_derivation": "base_seed + 1000003 * (image_index + 1)"
+  },
+  "scan_profile": "three_strength_external"
+}

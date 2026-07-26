@@ -1,0 +1,27 @@
+{
+  "models": {
+    "neural_motifs": {
+      "checks": {
+        "error_count_zero": true,
+        "full_pair_set": true,
+        "twenty_motifs": true
+      },
+      "eligible_pairs": 1411,
+      "error_count": 0,
+      "motif_count": 20,
+      "path": "${PROJECT_ROOT}/artifacts/experiment_3/formal_gtpairs_20260727/neural_motifs/experiment_3.json"
+    },
+    "sgg_transformer": {
+      "checks": {
+        "error_count_zero": true,
+        "full_pair_set": true,
+        "twenty_motifs": true
+      },
+      "eligible_pairs": 1411,
+      "error_count": 0,
+      "motif_count": 20,
+      "path": "${PROJECT_ROOT}/artifacts/experiment_3/formal_gtpairs_20260727/sgg_transformer/experiment_3.json"
+    }
+  },
+  "status": "pass"
+}

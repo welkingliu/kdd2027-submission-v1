@@ -1,0 +1,84 @@
+--- a/cvpods/layers/csrc/vision.cpp
++++ b/cvpods/layers/csrc/vision.cpp
+@@ -5,13 +5,15 @@
+ #include "ROIAlignRotated/ROIAlignRotated.h"
+ #include "box_iou_rotated/box_iou_rotated.h"
+ #include "cocoeval/cocoeval.h"
+-#include "deformable/deform_conv.h"
+ #include "nms_rotated/nms_rotated.h"
++#ifdef WITH_CUDA
++#include "deformable/deform_conv.h"
+ #include "sigmoid_focal_loss/SigmoidFocalLoss.h"
+ #include "ml_nms/ml_nms.h"
+ #include "SwapAlign2Nat/SwapAlign2Nat.h"
+ #include "border_align/border_align.h"
+ #include "PSROIPool/psroi_pool_cuda.h"
++#endif
+ 
+ namespace cvpods {
+ 
+@@ -70,11 +72,12 @@
+   m.def("get_compiler_version", &get_compiler_version, "get_compiler_version");
+   m.def("get_cuda_version", &get_cuda_version, "get_cuda_version");
+ 
++  m.def("box_iou_rotated", &box_iou_rotated, "IoU for rotated boxes");
++
++#ifdef WITH_CUDA
+   m.def("sigmoid_focalloss_forward", &SigmoidFocalLoss_forward, "SigmoidFocalLoss_forward");
+   m.def("sigmoid_focalloss_backward", &SigmoidFocalLoss_backward, "SigmoidFocalLoss_backward");
+ 
+-  m.def("box_iou_rotated", &box_iou_rotated, "IoU for rotated boxes");
+-
+   m.def("deform_conv_forward", &deform_conv_forward, "deform_conv_forward");
+   m.def(
+       "deform_conv_backward_input",
+@@ -93,7 +96,6 @@
+       &modulated_deform_conv_backward,
+       "modulated_deform_conv_backward");
+ 
+-  m.def("nms_rotated", &nms_rotated, "NMS for rotated boxes");
+   m.def("ml_nms", &ml_nms, "multi-label non-maximum suppression");
+ 
+   m.def("psroi_pooling_forward_cuda",
+@@ -102,7 +104,10 @@
+   m.def("psroi_pooling_backward_cuda",
+         &psroi_pooling_backward_cuda,
+         "Backward pass for PSROI-Pooling Operator");
++#endif
+ 
++  m.def("nms_rotated", &nms_rotated, "NMS for rotated boxes");
++
+   m.def("roi_align_forward", &ROIAlign_forward, "ROIAlign_forward");
+   m.def("roi_align_backward", &ROIAlign_backward, "ROIAlign_backward");
+ 
+@@ -114,6 +119,7 @@
+       "roi_align_rotated_backward",
+       &ROIAlignRotated_backward,
+       "Backward pass for Rotated ROI-Align Operator");
++#ifdef WITH_CUDA
+   m.def(
+       "swap_align2nat_forward",
+       &SwapAlign2Nat_forward,
+@@ -130,6 +136,7 @@
+       "border_align_backward",
+       &BorderAlign_Backward,
+       "BorderAlign_Backward");
++#endif
+   m.def("COCOevalAccumulate", &COCOeval::Accumulate, "COCOeval::Accumulate");
+   m.def(
+       "COCOevalEvaluateImages",
+--- a/cvpods/layers/nms.py
++++ b/cvpods/layers/nms.py
+@@ -8,7 +8,11 @@
+ from cvpods import _C
+ from cvpods.layers.rotated_boxes import pairwise_iou_rotated
+ 
+-ml_nms = _C.ml_nms
++if hasattr(_C, "ml_nms"):
++    ml_nms = _C.ml_nms
++else:
++    def ml_nms(boxes, scores, labels, iou_threshold):
++        return box_ops.batched_nms(boxes, scores, labels, iou_threshold)
+ 
+ 
+ def batched_nms(boxes, scores, idxs, iou_threshold):

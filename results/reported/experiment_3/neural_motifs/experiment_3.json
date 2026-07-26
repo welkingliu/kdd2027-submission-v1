@@ -1,0 +1,305 @@
+{
+  "causal_claims": "controlled_intervention_not_full_causal_identification",
+  "config": {
+    "data_root": "${PROJECT_ROOT}/data/vg/v1.4",
+    "dataset": "vg",
+    "device": "cuda",
+    "eval_ann": null,
+    "eval_samples": 2000,
+    "image_root": null,
+    "minimum_eval_support": 100,
+    "minimum_train_support": 20,
+    "official_manifest": [
+      "${PROJECT_ROOT}/checkpoints/sgg/manifests/pysgg_motifs_vg_live.json"
+    ],
+    "output_dir": "${EXTERNAL_RUNTIME}/ASSET",
+    "panoptic_root": null,
+    "seed": 17,
+    "top_k_motifs": 20,
+    "train_ann": null,
+    "train_samples": 5000
+  },
+  "dataset": "vg",
+  "experiment": "III_real_checkpoint_motif_intervention",
+  "graph_audit": {
+    "pysgg_motifs_vg_live": {
+      "MAR": 0.0174,
+      "MAR_gt_inv": 0.0174,
+      "MAR_topk": 0.0602,
+      "PIR": 0.8887,
+      "WSR": 0.966,
+      "bootstrap_95ci": {
+        "MAR": [
+          0.0,
+          0.04854368932038835
+        ],
+        "PIR": [
+          0.8565583354349656,
+          0.9181688299724265
+        ],
+        "WSR": [
+          0.9531756353028014,
+          0.977654899916501
+        ]
+      },
+      "clean_correct_support": 115,
+      "clean_wrong_support": 1296,
+      "error_count": 0,
+      "hallucinated_pairs": 1254,
+      "hallucinated_pairs_gt": 2,
+      "hallucinated_pairs_topk": 85,
+      "interpretation": "MAR is prediction persistence after terminal visual ablation, conditioned on a clean-correct motif prediction. It is not by itself evidence of hallucination because context can be sufficient.",
+      "intervention_contract": {
+        "consumed_input_fingerprint_required": true,
+        "endpoint": "object_terminal",
+        "fill": "per_image_channel_mean",
+        "fixed": [
+          "gt_boxes",
+          "entity_labels",
+          "relation_pairs",
+          "relation_labels",
+          "graph_topology"
+        ],
+        "segmentation_claim": "none_gt_box_conditioned",
+        "space": "raw_image_gt_box_and_proxy_features"
+      },
+      "last_error": null,
+      "legacy_hallucination_rate_alias": 0.0174,
+      "matched_negative_control": {
+        "MAR_terminal_minus_control": {
+          "bootstrap_95ci": [
+            -0.7241796440489433,
+            -0.3124339788732398
+          ],
+          "delta": -0.5130434782608696,
+          "num_images": 50,
+          "support": 115
+        },
+        "PIR_terminal_minus_control": {
+          "bootstrap_95ci": [
+            -0.06846534148827732,
+            -0.01782344047339744
+          ],
+          "delta": -0.04258339247693399,
+          "num_images": 551,
+          "support": 1409
+        },
+        "WSR_terminal_minus_control": {
+          "bootstrap_95ci": [
+            -0.01646776729715637,
+            0.014593214365411887
+          ],
+          "delta": -0.0007727975270478415,
+          "num_images": 526,
+          "support": 1294
+        },
+        "interpretation": "A terminal-minus-control delta near zero means terminal removal is no more influential than the matched non-endpoint control.",
+        "strategy": "mask the closest-area deterministic non-endpoint GT-box node while applying the same selected-pair union-feature ablation"
+      },
+      "mean_score_delta": 2.097,
+      "minimum_eval_support": 100,
+      "motif_source": "training_split",
+      "motifs_used": 20,
+      "per_motif_gt_rates": {
+        "(115,31,22)": 0.0,
+        "(115,31,99)": 0.0,
+        "(130,31,26)": 0.0,
+        "(145,31,22)": 0.0,
+        "(145,31,26)": 0.0,
+        "(145,31,65)": 0.0,
+        "(149,48,111)": 0.0,
+        "(22,20,145)": 0.1667,
+        "(26,31,124)": 0.0,
+        "(73,31,136)": 0.0,
+        "(76,31,99)": 0.0,
+        "(78,48,111)": 0.0,
+        "(93,31,9)": 0.0,
+        "(97,31,126)": 0.1111
+      },
+      "per_motif_inv_rates": {
+        "(115,31,22)": 0.75,
+        "(115,31,99)": 0.9474,
+        "(130,31,26)": 0.9167,
+        "(145,22,22)": 0.9474,
+        "(145,30,22)": 0.7778,
+        "(145,31,22)": 0.7647,
+        "(145,31,26)": 0.8947,
+        "(145,31,65)": 0.5714,
+        "(149,48,111)": 0.9677,
+        "(15,31,110)": 0.8182,
+        "(17,1,126)": 1.0,
+        "(22,20,145)": 0.86,
+        "(26,31,124)": 0.9538,
+        "(26,35,124)": 1.0,
+        "(73,31,136)": 0.9375,
+        "(76,31,99)": 0.8667,
+        "(78,48,111)": 0.9932,
+        "(78,48,87)": 1.0,
+        "(93,31,9)": 0.3095,
+        "(97,31,126)": 0.828
+      },
+      "status": "ok",
+      "top_motif": "(man, wearing, shirt)",
+      "top_motif_hall_rate": 0.9932,
+      "topological_hallucinator": false,
+      "total_motif_pairs": 1411,
+      "wrong_stable_pairs": 1252
+    }
+  },
+  "model_provenance": {
+    "pysgg_motifs_vg_live": {
+      "architecture_family": "Neural Motifs",
+      "checkpoint_status": {
+        "execution_mode": "live_adapter",
+        "loaded": true,
+        "metadata": {
+          "architecture_family": "Neural Motifs",
+          "baseline_mR": 0.0675,
+          "checkpoints": {
+            "predcls": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/motifs/predcls/predcls-MotifPredictor/(2026-07-19_18)/model_0069000.pth",
+              "sha256": "3bd1b0a30d5f5e1d3af5f08913645269b102c338049de5c2274567b4fa36ba9e"
+            },
+            "sgcls": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/motifs/sgcls/sgcls-MotifPredictor/(2026-07-20_10)/model_0060000.pth",
+              "sha256": "56900021b9e7058694e9c82623725a2e91a2fc99bd93d2d1907588891ae2f2c1"
+            },
+            "sgdet": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/motifs/sgdet/sgdet-MotifPredictor/(2026-07-21_00)/model_0057000.pth",
+              "sha256": "aa29071eb8184c3497245a6b3ea80352ce9fa87e14f38e4c669c532ae258cbdd"
+            }
+          },
+          "config": {
+            "checkpoint_tensor_parameter_count": 367174438,
+            "diagnostic_config": "${PROJECT_ROOT}/configs/pysgg_vg_tritask/motifs_sgcls.yaml",
+            "mitigation_scope": "post_hoc_calibration_shared_across_predcls_sgcls_sgdet",
+            "official_parameter_count": 367594769,
+            "parameter_count_semantics": "runtime_constructed_model_plus_shared_calibrators",
+            "prediction_cache_root": "${PROJECT_ROOT}/artifacts/prediction_cache/pysgg_motifs_vg_tritask",
+            "relation_score_mode": "categorical",
+            "source_root": "${PROJECT_ROOT}/external/official_repos/PySGG",
+            "worker_python": "${EXTERNAL_RUNTIME}/ASSET",
+            "worker_script": "${PROJECT_ROOT}/scripts/pysgg_live_worker.py"
+          },
+          "diagnostic_contract": {
+            "consumed_input_fingerprint": true,
+            "graph_intervention": true,
+            "graph_intervention_space": "raw_image_gt_box_conditioned",
+            "gt_node_features": false,
+            "gt_pair_predict": true
+          },
+          "diagnostic_task": "sgcls",
+          "environment_python": "${EXTERNAL_RUNTIME}/ASSET",
+          "execution_mode": "live_adapter",
+          "factory": "sgg_core.models.adapters.pysgg_live:create_adapter",
+          "input_source": "raw_images",
+          "metric_scale": "fraction",
+          "mitigation_contract": {
+            "forward_grounding": true,
+            "mask_object_logits": false,
+            "method": "shared_identity_initialised_logit_calibrator",
+            "object_logit_alignment": "gt_entities",
+            "object_logits": true,
+            "object_score_semantics": "full_refined_logits",
+            "relation_logit_alignment": "gt_relations",
+            "trainable_grounding_parameters": true,
+            "trainable_object_parameters": true
+          },
+          "name": "pysgg_motifs_vg_live",
+          "ontology_ids": {
+            "vg": "vg150:27af736e1c912d3f"
+          },
+          "paradigm": "sequential_context",
+          "parameter_count": 367620373,
+          "perturbation_contract": {
+            "boxes_only": true,
+            "color_jitter": true,
+            "full": true,
+            "key_node_mask": true,
+            "noise": true,
+            "on_manifold_replacement": true,
+            "random_node_mask": true,
+            "swap": true,
+            "union_attenuation": true,
+            "union_zero": true,
+            "unrelated_node_mask": true,
+            "visual_noise": true
+          },
+          "reference_dataset": "vg",
+          "reference_eval_images": 26446,
+          "reference_metrics": {
+            "PredCls/R@50": 0.6518,
+            "PredCls/mR@50": 0.1479,
+            "SGCls/R@50": 0.3892,
+            "SGCls/mR@50": 0.0828,
+            "SGDet/R@50": 0.3278,
+            "SGDet/mR@50": 0.0675
+          },
+          "reproduction_tolerance": 0.02,
+          "source_commit": "a63942a076932b3756a477cf8919c3b74cd36207",
+          "source_root": "${PROJECT_ROOT}/external/official_repos/PySGG",
+          "source_url": "https://github.com/SHTUPLUS/PySGG.git",
+          "supported_datasets": [
+            "vg"
+          ],
+          "supported_tasks": [
+            "predcls",
+            "sgcls",
+            "sgdet"
+          ],
+          "training_dataset": "VG-150",
+          "training_seed": 666
+        },
+        "parameter_count": 367620373,
+        "parameter_coverage": 1.0,
+        "path": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/motifs/sgcls/sgcls-MotifPredictor/(2026-07-20_10)/model_0060000.pth",
+        "paths_by_task": {
+          "predcls": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/motifs/predcls/predcls-MotifPredictor/(2026-07-19_18)/model_0069000.pth",
+          "sgcls": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/motifs/sgcls/sgcls-MotifPredictor/(2026-07-20_10)/model_0060000.pth",
+          "sgdet": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/motifs/sgdet/sgdet-MotifPredictor/(2026-07-21_00)/model_0057000.pth"
+        },
+        "sha256": "56900021b9e7058694e9c82623725a2e91a2fc99bd93d2d1907588891ae2f2c1",
+        "sha256_by_task": {
+          "predcls": "3bd1b0a30d5f5e1d3af5f08913645269b102c338049de5c2274567b4fa36ba9e",
+          "sgcls": "56900021b9e7058694e9c82623725a2e91a2fc99bd93d2d1907588891ae2f2c1",
+          "sgdet": "aa29071eb8184c3497245a6b3ea80352ce9fa87e14f38e4c669c532ae258cbdd"
+        },
+        "source_commit_verified": "a63942a076932b3756a477cf8919c3b74cd36207",
+        "source_provenance": {
+          "archive_path": "${PROJECT_ROOT}/external/official_archives/pysgg-a63942a076932b3756a477cf8919c3b74cd36207.tar.gz",
+          "archive_sha256": "e0bc387ccc066980261aa85a35ad97df04624eb3349e6318b3f11730010dd243",
+          "commit": "a63942a076932b3756a477cf8919c3b74cd36207",
+          "source_type": "official_commit_archive",
+          "source_url": "https://github.com/SHTUPLUS/PySGG.git"
+        }
+      },
+      "implementation_kind": "official_adapter",
+      "manifest_path": "${PROJECT_ROOT}/checkpoints/sgg/manifests/pysgg_motifs_vg_live.json",
+      "perturbation_contract": {
+        "boxes_only": true,
+        "color_jitter": true,
+        "full": true,
+        "key_node_mask": true,
+        "noise": true,
+        "on_manifold_replacement": true,
+        "random_node_mask": true,
+        "swap": true,
+        "union_attenuation": true,
+        "union_zero": true,
+        "unrelated_node_mask": true,
+        "visual_noise": true
+      },
+      "supported_tasks": [
+        "predcls",
+        "sgcls",
+        "sgdet"
+      ]
+    }
+  },
+  "motif_source": "training_split_only",
+  "randomness_protocol": {
+    "checkpoint_replication": "use independently trained checkpoint manifests; do not count repeated inference as training seeds",
+    "intervention": "deterministic_for_a_fixed_checkpoint"
+  },
+  "submission_scope": "representative_4_to_6_family_panel"
+}

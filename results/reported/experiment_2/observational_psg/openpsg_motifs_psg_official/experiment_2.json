@@ -1,0 +1,253 @@
+{
+  "analysis_scope": "observational",
+  "causal_claims": "association_only",
+  "config": {
+    "analysis_scope": "observational",
+    "data_root": "${PROJECT_ROOT}/data/psg",
+    "dataset": "psg",
+    "device": "cpu",
+    "eval_ann": "${PROJECT_ROOT}/data/psg/psg_val_test.json",
+    "eval_samples": 1000000000,
+    "image_root": "${PROJECT_ROOT}/data/coco",
+    "minimum_clean_recall": 0.01,
+    "minimum_pvr_checked": 100,
+    "minimum_relations": 200,
+    "official_manifest": [
+      "${PROJECT_ROOT}/checkpoints/sgg/manifests/openpsg_motifs_psg.json"
+    ],
+    "output_dir": "${PROJECT_ROOT}/artifacts/experiment_2/mac_cpu_queue_20260721_144107_psg_observational_full/psg/openpsg_motifs_psg_official",
+    "pair_hit_ks": [
+      1,
+      5,
+      10
+    ],
+    "panoptic_root": "${PROJECT_ROOT}/data/coco",
+    "perturbation_levels": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "perturbation_seeds": [
+      17,
+      29,
+      43
+    ],
+    "perturbation_strategies": [
+      "key_node_mask",
+      "random_node_mask",
+      "unrelated_node_mask",
+      "on_manifold_replacement"
+    ],
+    "primary_k": 5,
+    "seed": 17,
+    "skip_pair_audit": false,
+    "skip_physical_consistency": false,
+    "train_ann": "${PROJECT_ROOT}/data/psg/psg_train_val.json",
+    "train_samples": 5000
+  },
+  "dataset": "psg",
+  "dose_response_and_controls": null,
+  "experiment": "II_real_checkpoint_pair_grounding",
+  "metric_scope": "GT-pair diagnostic; standard image-level SGG metrics are Experiment IV",
+  "model_provenance": {
+    "openpsg_motifs_psg_official": {
+      "architecture_family": "Neural Motifs",
+      "checkpoint_status": {
+        "execution_mode": "prediction_cache",
+        "loaded": true,
+        "metadata": {
+          "architecture_family": "Neural Motifs",
+          "baseline_mR": 0.0957,
+          "checkpoints": {
+            "sgdet": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/weights/openpsg/psg/motifs/epoch_12.pth",
+              "sha256": "956471959ca89acae45c9533fb9f9a6544e650b8ea18fe62cdead495b38751b8"
+            }
+          },
+          "config": {
+            "object_score_source": "official_distribution",
+            "official_reference_protocol": "panoptic_mask_iou_0.5",
+            "prediction_cache_metadata_sha256": "71efebb0f9c33810fcd2d26f80f3163de13a19df4a690269132d827e79a6bbb7",
+            "prediction_cache_root": "${PROJECT_ROOT}/artifacts/prediction_cache/openpsg_motifs_psg",
+            "prediction_protocol": "official_scene_graph_box_output",
+            "relation_score_mode": "categorical",
+            "unified_sgdet_matching": "box_iou_0.5"
+          },
+          "diagnostic_task": "sgdet",
+          "environment_python": "${EXTERNAL_RUNTIME}/ASSET",
+          "execution_mode": "prediction_cache",
+          "factory": "sgg_core.models.prediction_cache:create_adapter",
+          "input_source": "official_prediction_cache",
+          "metric_scale": "fraction",
+          "mitigation_contract": {
+            "forward_grounding": false,
+            "mask_object_logits": false,
+            "object_logit_alignment": "sparse_predictions",
+            "object_logits": false,
+            "relation_logit_alignment": "sparse_predictions",
+            "trainable_grounding_parameters": false,
+            "trainable_object_parameters": false
+          },
+          "name": "openpsg_motifs_psg_official",
+          "native_reference_validation": {
+            "protocol": "official_panoptic_mask_iou_0.5",
+            "report": "${PROJECT_ROOT}/artifacts/native_reference/openpsg_motifs_psg/report.json",
+            "sha256": "94f442d8c8c2caf978904d8d8a4cd7cc90ae49f707046300d4d7ed9dc527da11",
+            "status": "pass"
+          },
+          "ontology_ids": {
+            "psg": "psg:7aed4e5aec62c0ec",
+            "psg_official_panoptic": "psg:7aed4e5aec62c0ec"
+          },
+          "paradigm": "rnn_context",
+          "parameter_count": 109001981,
+          "perturbation_contract": {
+            "boxes_only": false,
+            "color_jitter": false,
+            "full": false,
+            "key_node_mask": false,
+            "noise": false,
+            "on_manifold_replacement": false,
+            "random_node_mask": false,
+            "swap": false,
+            "union_attenuation": false,
+            "union_zero": false,
+            "unrelated_node_mask": false,
+            "visual_noise": false
+          },
+          "reference_dataset": "psg_official_panoptic",
+          "reference_eval_images": 2177,
+          "reference_metrics": {
+            "SGDet/R@50": 0.217,
+            "SGDet/mR@50": 0.0957
+          },
+          "reproduction_tolerance": 0.02,
+          "source_commit": "34b2a892f7441966265e3d60ad01ee8eeae89041",
+          "source_root": "${PROJECT_ROOT}/external/official_repos/OpenPSG",
+          "source_url": "https://github.com/Jingkang50/OpenPSG.git",
+          "supported_datasets": [
+            "psg",
+            "psg_official_panoptic"
+          ],
+          "supported_tasks": [
+            "sgdet"
+          ],
+          "training_dataset": "PSG",
+          "training_seed": 0
+        },
+        "parameter_count": 109001981,
+        "parameter_coverage": 1.0,
+        "path": "${PROJECT_ROOT}/checkpoints/sgg/weights/openpsg/psg/motifs/epoch_12.pth",
+        "paths_by_task": {
+          "sgdet": "${PROJECT_ROOT}/checkpoints/sgg/weights/openpsg/psg/motifs/epoch_12.pth"
+        },
+        "sha256": "956471959ca89acae45c9533fb9f9a6544e650b8ea18fe62cdead495b38751b8",
+        "sha256_by_task": {
+          "sgdet": "956471959ca89acae45c9533fb9f9a6544e650b8ea18fe62cdead495b38751b8"
+        },
+        "source_commit_verified": "34b2a892f7441966265e3d60ad01ee8eeae89041",
+        "source_provenance": {
+          "archive_path": "${PROJECT_ROOT}/external/official_archives/openpsg-34b2a892f7441966265e3d60ad01ee8eeae89041.tar.gz",
+          "archive_sha256": "9bbd20ced5ad1ac5ac4d0e17f7a3b784fbdc920b6ff89f0b4abe999d5f535947",
+          "commit": "34b2a892f7441966265e3d60ad01ee8eeae89041",
+          "source_type": "official_commit_archive",
+          "source_url": "https://github.com/Jingkang50/OpenPSG.git"
+        }
+      },
+      "implementation_kind": "official_prediction_cache",
+      "manifest_path": "${PROJECT_ROOT}/checkpoints/sgg/manifests/openpsg_motifs_psg.json",
+      "perturbation_contract": {
+        "boxes_only": false,
+        "color_jitter": false,
+        "full": false,
+        "key_node_mask": false,
+        "noise": false,
+        "on_manifold_replacement": false,
+        "random_node_mask": false,
+        "swap": false,
+        "union_attenuation": false,
+        "union_zero": false,
+        "unrelated_node_mask": false,
+        "visual_noise": false
+      },
+      "supported_tasks": [
+        "sgdet"
+      ]
+    }
+  },
+  "object_error_propagation": {
+    "openpsg_motifs_psg_official": {
+      "interpretation": "Association only: endpoint errors and relation errors share upstream causes. Use Experiment II interventions for stronger evidence.",
+      "status": "ok",
+      "tasks": {
+        "sgdet": {
+          "counts": {
+            "evaluable_relations": 3707,
+            "gt_relations": 6429,
+            "localized_endpoint_relations": 3707
+          },
+          "endpoint_and_pair_coverage": 0.5766060040441748,
+          "errors": [],
+          "groups": {
+            "both_correct": {
+              "bootstrap_95ci_Hit@1": [
+                0.5232750387340904,
+                0.5622908340061168
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.8995198316207808,
+                0.9232674617461747
+              ],
+              "relation_Hit@1": 0.5427960057061341,
+              "relation_Hit@5": 0.9115549215406562,
+              "support": 2804
+            },
+            "both_wrong": {
+              "bootstrap_95ci_Hit@1": [
+                0.4264645612343298,
+                0.6712328767123288
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.8985507246376812,
+                1.0
+              ],
+              "relation_Hit@1": 0.5522388059701493,
+              "relation_Hit@5": 0.9552238805970149,
+              "support": 67
+            },
+            "one_wrong": {
+              "bootstrap_95ci_Hit@1": [
+                0.3811064954369182,
+                0.45586723270559504
+              ],
+              "bootstrap_95ci_Hit@5": [
+                0.8564140635205263,
+                0.9074107866991079
+              ],
+              "relation_Hit@1": 0.41866028708133973,
+              "relation_Hit@5": 0.8827751196172249,
+              "support": 836
+            }
+          },
+          "localized_endpoint_coverage": 0.5766060040441748,
+          "num_images": 1000,
+          "status": "ok",
+          "task": "sgdet"
+        }
+      }
+    }
+  },
+  "pair_audit": null,
+  "pair_metric": "predicate Hit@K with K restricted below the predicate vocabulary size",
+  "physical_consistency": null,
+  "randomness_protocol": {
+    "base_perturbation_seeds": [
+      17,
+      29,
+      43
+    ],
+    "bootstrap_unit": "image after averaging perturbation seeds",
+    "per_image_seed_derivation": "base_seed + 1000003 * (image_index + 1)"
+  },
+  "scan_profile": "three_strength_external"
+}

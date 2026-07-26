@@ -1,0 +1,15 @@
+.venv/
+.runtimes/
+dist/
+__pycache__/
+*.py[cod]
+.DS_Store
+artifacts/experiment_*/**
+artifacts/logs/*.log
+checkpoints/sgg/weights/**
+checkpoints/sgg/manifests/*.json
+configs/pysgg_generated/**
+external/official_repos/**
+external/official_archives/**
+data/**
+!data/.gitkeep

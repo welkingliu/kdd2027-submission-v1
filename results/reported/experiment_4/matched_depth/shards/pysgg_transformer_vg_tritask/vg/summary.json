@@ -1,0 +1,538 @@
+{
+  "candidate_panel": {
+    "candidate_families": 20,
+    "formal_target_families": 5,
+    "native_family_coverage": {
+      "gqa": [],
+      "oi": [
+        "IMP",
+        "Neural Motifs",
+        "GPS-Net",
+        "GRCNN",
+        "RelDN",
+        "BGNN",
+        "RelTR",
+        "SGTR",
+        "EGTR"
+      ],
+      "psg": [
+        "IMP",
+        "Neural Motifs",
+        "VCTree",
+        "GPS-Net",
+        "PSGTR",
+        "PSGFormer",
+        "PGSG"
+      ],
+      "vg": [
+        "IMP",
+        "Neural Motifs",
+        "SGG Transformer",
+        "VCTree",
+        "TDE-Motifs",
+        "GPS-Net",
+        "GRCNN",
+        "RelDN",
+        "BGNN",
+        "RelTR",
+        "SGTR",
+        "PE-Net",
+        "OvSGTR",
+        "EGTR",
+        "PGSG",
+        "HiKER-SGG",
+        "LLM4SGG",
+        "APT"
+      ],
+      "vrd": [
+        "GPS-Net",
+        "RelDN"
+      ]
+    },
+    "recommended_target_families": 7,
+    "survey_literature_target_families": 10
+  },
+  "config": {
+    "allow_incomplete_audits": true,
+    "allow_unlisted_family": false,
+    "datasets": [
+      "vg"
+    ],
+    "device": "cuda",
+    "eval_samples": 1000000000,
+    "gqa_eval_ann": null,
+    "gqa_image_root": null,
+    "gqa_train_ann": null,
+    "manifest_dir": null,
+    "minimum_clean_recall": 0.01,
+    "minimum_model_families": 1,
+    "minimum_models_per_dataset": 1,
+    "minimum_motif_eval_support": 100,
+    "minimum_motif_train_support": 20,
+    "minimum_pvr_checked": 100,
+    "minimum_relations": 200,
+    "model_panel": "sgg_core/models/model_panel.json",
+    "official_manifest": [
+      "artifacts/manifests/experiment4_converged_depth/pysgg_transformer_vg_tritask.json"
+    ],
+    "oi_root": null,
+    "output_dir": "artifacts/experiment_4/postcache_submission_20260723_104627_exp4/shards/pysgg_transformer_vg_tritask/vg",
+    "perturbation_levels": [
+      0.0,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "perturbation_seeds": [
+      17,
+      29,
+      43
+    ],
+    "primary_k": 5,
+    "psg_eval_ann": null,
+    "psg_image_root": null,
+    "psg_panoptic_root": null,
+    "psg_train_ann": null,
+    "recall_ks": [
+      1,
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "seed": 17,
+    "seen_triplets_manifest": "artifacts/manifests/seen_triplets_full.json",
+    "sgg_iou": 0.5,
+    "sgg_tasks": [
+      "predcls",
+      "sgcls",
+      "sgdet"
+    ],
+    "steps": [
+      "standard",
+      "grounding"
+    ],
+    "top_k_motifs": 20,
+    "train_samples": 5000,
+    "vg_root": "data/vg/v1.4",
+    "vrd_root": null
+  },
+  "created_at": "2026-07-23T06:34:09.854443+00:00",
+  "cross_dataset_rows": [
+    {
+      "BRR@5": null,
+      "MAR": null,
+      "PVR": null,
+      "PVR_coverage": null,
+      "R@50": 0.2888166565675793,
+      "architecture_family": "SGG Transformer",
+      "checkpoint_sha256": "f36a4c8bd64a3b4833babe674aa66d820fae649bbf8b1bfefc90be0799c991d1",
+      "dataset": "vg",
+      "dirichlet_energy": null,
+      "effective_rank": null,
+      "mR@50": 0.07260082921746296,
+      "model": "pysgg_transformer_vg_tritask",
+      "pvr_checked": null,
+      "zR@50": 0.011471683390249445
+    }
+  ],
+  "datasets": [
+    "vg"
+  ],
+  "diagnostic_reuse_contract": {
+    "motif_intervention": "not_in_converged_submission",
+    "pair_and_perturbation": "Experiment II",
+    "rerun_inside_experiment_4": false
+  },
+  "evidence_chain": {
+    "analysis_scope": "Prediction caches count only for standard reproduction; cross-level statistics require a live adapter for the same checkpoint SHA.",
+    "causal_claims": "not_identified",
+    "confirmatory_spearman": {
+      "BRR__vs__MAR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "BRR__vs__SGDet_mR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "MAR__vs__SGDet_mR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "collapse_score__vs__BRR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "dirichlet_energy__vs__BRR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "wrong_stable_rate__vs__SGDet_mR": {
+        "n": 0,
+        "status": "insufficient_data"
+      }
+    },
+    "diagnostic_k": 5,
+    "exploratory_mediation": {
+      "minimum_n": 10,
+      "n": 0,
+      "status": "insufficient_data"
+    },
+    "num_live_diagnostic_rows": 0,
+    "num_rows": 8,
+    "num_standard_confirmatory_rows": 1,
+    "ood_controlled_regression": {
+      "minimum_n": 8,
+      "n": 0,
+      "status": "insufficient_data"
+    },
+    "per_dataset_spearman": {},
+    "performance_k": 50,
+    "rows": [
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "vg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "active_families",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "vg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "active_models",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "vg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "eval_images",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "vg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "ontology_id",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": 0.2888166565675793,
+        "SGDet_mR": 0.07260082921746296,
+        "WSR": null,
+        "baseline_mR": 0.0813,
+        "checkpoint_sha256": "f36a4c8bd64a3b4833babe674aa66d820fae649bbf8b1bfefc90be0799c991d1",
+        "collapse_score": null,
+        "dataset": "vg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": "official_prediction_cache",
+        "is_ood": false,
+        "log10_parameter_count": 8.51939434489236,
+        "model": "pysgg_transformer_vg_tritask",
+        "normalized_effective_rank": null,
+        "training_dataset": "vg",
+        "training_seed": 666,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "vg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "seen_triplet_provenance",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "vg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "seen_triplets",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "vg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "train_images",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      }
+    ],
+    "status": "ok"
+  },
+  "experiment": "IV_standard_official_model_benchmark",
+  "formal_model_family_count": 1,
+  "loaded_model_families": [
+    "SGG Transformer"
+  ],
+  "loaded_model_runs": 1,
+  "model_provenance": {
+    "pysgg_transformer_vg_tritask": {
+      "architecture_family": "SGG Transformer",
+      "checkpoint_status": {
+        "execution_mode": "prediction_cache",
+        "loaded": true,
+        "metadata": {
+          "architecture_family": "SGG Transformer",
+          "baseline_mR": 0.0813,
+          "checkpoints": {
+            "predcls": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/transformer/predcls/predcls-TransformerPredictor/(2026-07-22_13)/model_final.pth",
+              "sha256": "fc9c470395fd24aefe8cee1cb4c0a9a49ed3e1ba222fbef0ebcc15ce820936ba"
+            },
+            "sgcls": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/transformer/sgcls/sgcls-TransformerPredictor/(2026-07-22_18)/model_final.pth",
+              "sha256": "acda42d4b160cf9b9b3bb7e23b4150f6493c063f34459e3da02474198ef3509f"
+            },
+            "sgdet": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/transformer/sgdet/sgdet-TransformerPredictor/(2026-07-22_22)/model_final.pth",
+              "sha256": "f36a4c8bd64a3b4833babe674aa66d820fae649bbf8b1bfefc90be0799c991d1"
+            }
+          },
+          "config": {
+            "prediction_cache_metadata_sha256": "97b128dd48b8f928e22cdcc127c02f3d00912ff3ebb8c315e9102fd2a6b99b02",
+            "prediction_cache_root": "${PROJECT_ROOT}/artifacts/prediction_cache/pysgg_transformer_vg_tritask",
+            "relation_score_mode": "categorical"
+          },
+          "diagnostic_task": "sgdet",
+          "environment_python": "${EXTERNAL_RUNTIME}/ASSET",
+          "execution_mode": "prediction_cache",
+          "factory": "sgg_core.models.prediction_cache:create_adapter",
+          "input_source": "official_prediction_cache",
+          "metric_scale": "fraction",
+          "mitigation_contract": {
+            "forward_grounding": false,
+            "mask_object_logits": false,
+            "object_logit_alignment": "unavailable",
+            "object_logits": false,
+            "relation_logit_alignment": "unavailable",
+            "trainable_grounding_parameters": false,
+            "trainable_object_parameters": false
+          },
+          "name": "pysgg_transformer_vg_tritask",
+          "ontology_ids": {
+            "vg": "vg150:27af736e1c912d3f"
+          },
+          "paradigm": "transformer_context",
+          "parameter_count": 330669657,
+          "parameter_count_by_task": {
+            "predcls": 330669657,
+            "sgcls": 330669657,
+            "sgdet": 330669657
+          },
+          "perturbation_contract": {
+            "boxes_only": false,
+            "color_jitter": false,
+            "full": false,
+            "key_node_mask": false,
+            "noise": false,
+            "on_manifold_replacement": false,
+            "random_node_mask": false,
+            "swap": false,
+            "union_attenuation": false,
+            "union_zero": false,
+            "unrelated_node_mask": false,
+            "visual_noise": false
+          },
+          "reference_dataset": "vg",
+          "reference_metrics": {
+            "PredCls/R@50": 0.6555,
+            "PredCls/mR@50": 0.163,
+            "SGCls/R@50": 0.4018,
+            "SGCls/mR@50": 0.1009,
+            "SGDet/R@50": 0.3304,
+            "SGDet/mR@50": 0.0813
+          },
+          "reproduction_tolerance": 0.02,
+          "source_commit": "a63942a076932b3756a477cf8919c3b74cd36207",
+          "source_root": "${PROJECT_ROOT}/external/official_repos/PySGG",
+          "source_url": "https://github.com/SHTUPLUS/PySGG.git",
+          "supported_datasets": [
+            "vg"
+          ],
+          "supported_tasks": [
+            "predcls",
+            "sgcls",
+            "sgdet"
+          ],
+          "training_dataset": "VG-150",
+          "training_seed": 666
+        },
+        "parameter_count": 330669657,
+        "parameter_coverage": 1.0,
+        "path": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/transformer/sgdet/sgdet-TransformerPredictor/(2026-07-22_22)/model_final.pth",
+        "paths_by_task": {
+          "predcls": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/transformer/predcls/predcls-TransformerPredictor/(2026-07-22_13)/model_final.pth",
+          "sgcls": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/transformer/sgcls/sgcls-TransformerPredictor/(2026-07-22_18)/model_final.pth",
+          "sgdet": "${PROJECT_ROOT}/checkpoints/sgg/trained/pysgg/transformer/sgdet/sgdet-TransformerPredictor/(2026-07-22_22)/model_final.pth"
+        },
+        "sha256": "f36a4c8bd64a3b4833babe674aa66d820fae649bbf8b1bfefc90be0799c991d1",
+        "sha256_by_task": {
+          "predcls": "fc9c470395fd24aefe8cee1cb4c0a9a49ed3e1ba222fbef0ebcc15ce820936ba",
+          "sgcls": "acda42d4b160cf9b9b3bb7e23b4150f6493c063f34459e3da02474198ef3509f",
+          "sgdet": "f36a4c8bd64a3b4833babe674aa66d820fae649bbf8b1bfefc90be0799c991d1"
+        },
+        "source_commit_verified": "a63942a076932b3756a477cf8919c3b74cd36207",
+        "source_provenance": {
+          "archive_path": "${PROJECT_ROOT}/external/official_archives/pysgg-a63942a076932b3756a477cf8919c3b74cd36207.tar.gz",
+          "archive_sha256": "e0bc387ccc066980261aa85a35ad97df04624eb3349e6318b3f11730010dd243",
+          "commit": "a63942a076932b3756a477cf8919c3b74cd36207",
+          "source_type": "official_commit_archive",
+          "source_url": "https://github.com/SHTUPLUS/PySGG.git"
+        }
+      },
+      "implementation_kind": "official_prediction_cache",
+      "manifest_path": "${PROJECT_ROOT}/artifacts/manifests/experiment4_converged_depth/pysgg_transformer_vg_tritask.json",
+      "paradigm": "transformer_context",
+      "parameter_count": 330669657,
+      "perturbation_contract": {
+        "boxes_only": false,
+        "color_jitter": false,
+        "full": false,
+        "key_node_mask": false,
+        "noise": false,
+        "on_manifold_replacement": false,
+        "random_node_mask": false,
+        "swap": false,
+        "union_attenuation": false,
+        "union_zero": false,
+        "unrelated_node_mask": false,
+        "visual_noise": false
+      },
+      "supported_tasks": [
+        "predcls",
+        "sgcls",
+        "sgdet"
+      ]
+    }
+  }
+}

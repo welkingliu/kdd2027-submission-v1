@@ -1,0 +1,518 @@
+{
+  "candidate_panel": {
+    "candidate_families": 19,
+    "formal_target_families": 6,
+    "native_family_coverage": {
+      "gqa": [],
+      "oi": [
+        "IMP",
+        "Neural Motifs",
+        "GPS-Net",
+        "GRCNN",
+        "RelDN",
+        "BGNN",
+        "RelTR",
+        "SGTR",
+        "EGTR"
+      ],
+      "psg": [
+        "IMP",
+        "Neural Motifs",
+        "VCTree",
+        "GPS-Net",
+        "PSGTR",
+        "PSGFormer",
+        "PGSG"
+      ],
+      "vg": [
+        "IMP",
+        "Neural Motifs",
+        "VCTree",
+        "TDE-Motifs",
+        "GPS-Net",
+        "GRCNN",
+        "RelDN",
+        "BGNN",
+        "RelTR",
+        "SGTR",
+        "PE-Net",
+        "OvSGTR",
+        "EGTR",
+        "PGSG",
+        "HiKER-SGG",
+        "LLM4SGG",
+        "APT"
+      ],
+      "vrd": [
+        "GPS-Net",
+        "RelDN"
+      ]
+    },
+    "recommended_target_families": 8,
+    "survey_literature_target_families": 10
+  },
+  "config": {
+    "allow_incomplete_audits": false,
+    "allow_unlisted_family": false,
+    "datasets": [
+      "psg"
+    ],
+    "device": "cuda",
+    "eval_samples": 1000000000,
+    "gqa_eval_ann": null,
+    "gqa_image_root": null,
+    "gqa_train_ann": null,
+    "manifest_dir": null,
+    "minimum_clean_recall": 0.01,
+    "minimum_model_families": 1,
+    "minimum_models_per_dataset": 1,
+    "minimum_motif_eval_support": 100,
+    "minimum_motif_train_support": 20,
+    "minimum_pvr_checked": 100,
+    "minimum_relations": 200,
+    "model_panel": "${PROJECT_ROOT}/sgg_core/models/model_panel.json",
+    "official_manifest": [
+      "${PROJECT_ROOT}/checkpoints/sgg/manifests/openpsg_psgformer_psg.json"
+    ],
+    "oi_root": null,
+    "output_dir": "${PROJECT_ROOT}/artifacts/experiment_4/exp4_sgdet_submission_fixed_20260718_192834/shards/openpsg_psgformer_psg_official/psg",
+    "perturbation_levels": [
+      0.0,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "perturbation_seeds": [
+      17,
+      29,
+      43
+    ],
+    "primary_k": 5,
+    "psg_eval_ann": "${PROJECT_ROOT}/data/psg/psg_val_test.json",
+    "psg_image_root": "${PROJECT_ROOT}/data/coco",
+    "psg_panoptic_root": "${PROJECT_ROOT}/data/coco",
+    "psg_train_ann": "${PROJECT_ROOT}/data/psg/psg_train_val.json",
+    "recall_ks": [
+      1,
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "seed": 17,
+    "seen_triplets_manifest": "${PROJECT_ROOT}/artifacts/manifests/seen_triplets_full.json",
+    "sgg_iou": 0.5,
+    "sgg_tasks": [
+      "predcls",
+      "sgcls",
+      "sgdet"
+    ],
+    "steps": [
+      "standard",
+      "grounding"
+    ],
+    "top_k_motifs": 20,
+    "train_samples": 5000,
+    "vg_root": null,
+    "vrd_root": null
+  },
+  "created_at": "2026-07-18T12:35:38.645592+00:00",
+  "cross_dataset_rows": [
+    {
+      "BRR@5": null,
+      "MAR": null,
+      "PVR": null,
+      "PVR_coverage": null,
+      "R@50": 0.19793656882333352,
+      "architecture_family": "PSGFormer",
+      "checkpoint_sha256": "2f0015ce67040fa00b65986f6ce457c4f8cc34720f7e47a656b462b696a013b7",
+      "dataset": "psg",
+      "dirichlet_energy": null,
+      "effective_rank": null,
+      "mR@50": 0.14499294892079012,
+      "model": "openpsg_psgformer_psg_official",
+      "pvr_checked": null,
+      "zR@50": 0.017628205128205128
+    }
+  ],
+  "datasets": [
+    "psg"
+  ],
+  "diagnostic_reuse_contract": {
+    "motif_intervention": "Experiment III",
+    "pair_and_perturbation": "Experiment II",
+    "rerun_inside_experiment_4": false
+  },
+  "evidence_chain": {
+    "analysis_scope": "Prediction caches count only for standard reproduction; cross-level statistics require a live adapter for the same checkpoint SHA.",
+    "causal_claims": "not_identified",
+    "confirmatory_spearman": {
+      "BRR__vs__MAR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "BRR__vs__SGDet_mR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "MAR__vs__SGDet_mR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "collapse_score__vs__BRR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "dirichlet_energy__vs__BRR": {
+        "n": 0,
+        "status": "insufficient_data"
+      },
+      "wrong_stable_rate__vs__SGDet_mR": {
+        "n": 0,
+        "status": "insufficient_data"
+      }
+    },
+    "diagnostic_k": 5,
+    "exploratory_mediation": {
+      "minimum_n": 10,
+      "n": 0,
+      "status": "insufficient_data"
+    },
+    "num_live_diagnostic_rows": 0,
+    "num_rows": 8,
+    "num_standard_confirmatory_rows": 1,
+    "ood_controlled_regression": {
+      "minimum_n": 8,
+      "n": 0,
+      "status": "insufficient_data"
+    },
+    "per_dataset_spearman": {},
+    "performance_k": 50,
+    "rows": [
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "psg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "active_families",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "psg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "active_models",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "psg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "eval_images",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "psg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "ontology_id",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": 0.19793656882333352,
+        "SGDet_mR": 0.14499294892079012,
+        "WSR": null,
+        "baseline_mR": 0.17,
+        "checkpoint_sha256": "2f0015ce67040fa00b65986f6ce457c4f8cc34720f7e47a656b462b696a013b7",
+        "collapse_score": null,
+        "dataset": "psg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": "official_prediction_cache",
+        "is_ood": false,
+        "log10_parameter_count": 7.7234220108559395,
+        "model": "openpsg_psgformer_psg_official",
+        "normalized_effective_rank": null,
+        "training_dataset": "psg",
+        "training_seed": 0,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "psg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "seen_triplet_provenance",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "psg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "seen_triplets",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      },
+      {
+        "BRR": null,
+        "MAR": null,
+        "PIR": null,
+        "PVR": null,
+        "PVR_coverage": null,
+        "SGDet_R": null,
+        "SGDet_mR": null,
+        "WSR": null,
+        "baseline_mR": null,
+        "checkpoint_sha256": null,
+        "collapse_score": null,
+        "dataset": "psg",
+        "dirichlet_energy": null,
+        "effective_rank": null,
+        "implementation_kind": null,
+        "is_ood": false,
+        "log10_parameter_count": null,
+        "model": "train_images",
+        "normalized_effective_rank": null,
+        "training_dataset": null,
+        "training_seed": null,
+        "wrong_stable_rate": null
+      }
+    ],
+    "status": "ok"
+  },
+  "experiment": "IV_standard_official_model_benchmark",
+  "formal_model_family_count": 1,
+  "loaded_model_families": [
+    "PSGFormer"
+  ],
+  "loaded_model_runs": 1,
+  "model_provenance": {
+    "openpsg_psgformer_psg_official": {
+      "architecture_family": "PSGFormer",
+      "checkpoint_status": {
+        "execution_mode": "prediction_cache",
+        "loaded": true,
+        "metadata": {
+          "architecture_family": "PSGFormer",
+          "baseline_mR": 0.17,
+          "checkpoints": {
+            "sgdet": {
+              "path": "${PROJECT_ROOT}/checkpoints/sgg/weights/openpsg/psg/psgformer/epoch_60.pth",
+              "sha256": "2f0015ce67040fa00b65986f6ce457c4f8cc34720f7e47a656b462b696a013b7"
+            }
+          },
+          "config": {
+            "object_score_source": "hard_label_plus_official_box_confidence",
+            "official_reference_protocol": "panoptic_mask_iou_0.5",
+            "prediction_cache_metadata_sha256": "dc72f089eb2edd999b8472372143658862063e70bcf80c3970d942e0c4173b4d",
+            "prediction_cache_root": "${PROJECT_ROOT}/artifacts/prediction_cache/openpsg_psgformer_psg",
+            "prediction_protocol": "official_non_panoptic_box_aligned",
+            "relation_score_mode": "categorical",
+            "unified_sgdet_matching": "box_iou_0.5"
+          },
+          "diagnostic_task": "sgdet",
+          "environment_python": "${EXTERNAL_RUNTIME}/ASSET",
+          "execution_mode": "prediction_cache",
+          "factory": "sgg_core.models.prediction_cache:create_adapter",
+          "input_source": "official_prediction_cache",
+          "metric_scale": "fraction",
+          "mitigation_contract": {
+            "forward_grounding": false,
+            "mask_object_logits": false,
+            "object_logit_alignment": "sparse_predictions",
+            "object_logits": false,
+            "relation_logit_alignment": "sparse_predictions",
+            "trainable_grounding_parameters": false,
+            "trainable_object_parameters": false
+          },
+          "name": "openpsg_psgformer_psg_official",
+          "ontology_ids": {
+            "psg": "psg:7aed4e5aec62c0ec"
+          },
+          "paradigm": "end_to_end_transformer",
+          "parameter_count": 52895900,
+          "perturbation_contract": {
+            "boxes_only": false,
+            "color_jitter": false,
+            "full": false,
+            "key_node_mask": false,
+            "noise": false,
+            "on_manifold_replacement": false,
+            "random_node_mask": false,
+            "swap": false,
+            "union_attenuation": false,
+            "union_zero": false,
+            "unrelated_node_mask": false,
+            "visual_noise": false
+          },
+          "reference_dataset": "psg_official_panoptic",
+          "reference_eval_images": 2177,
+          "reference_metrics": {
+            "SGDet/R@50": 0.196,
+            "SGDet/mR@50": 0.17
+          },
+          "reproduction_tolerance": 0.02,
+          "source_commit": "34b2a892f7441966265e3d60ad01ee8eeae89041",
+          "source_root": "${PROJECT_ROOT}/external/official_repos/OpenPSG",
+          "source_url": "https://github.com/Jingkang50/OpenPSG.git",
+          "supported_datasets": [
+            "psg",
+            "psg_official_panoptic"
+          ],
+          "supported_tasks": [
+            "sgdet"
+          ],
+          "training_dataset": "PSG",
+          "training_seed": 0
+        },
+        "parameter_count": 52895900,
+        "parameter_coverage": 1.0,
+        "path": "${PROJECT_ROOT}/checkpoints/sgg/weights/openpsg/psg/psgformer/epoch_60.pth",
+        "paths_by_task": {
+          "sgdet": "${PROJECT_ROOT}/checkpoints/sgg/weights/openpsg/psg/psgformer/epoch_60.pth"
+        },
+        "sha256": "2f0015ce67040fa00b65986f6ce457c4f8cc34720f7e47a656b462b696a013b7",
+        "sha256_by_task": {
+          "sgdet": "2f0015ce67040fa00b65986f6ce457c4f8cc34720f7e47a656b462b696a013b7"
+        },
+        "source_commit_verified": "34b2a892f7441966265e3d60ad01ee8eeae89041",
+        "source_provenance": {
+          "archive_path": "${PROJECT_ROOT}/external/official_archives/openpsg-34b2a892f7441966265e3d60ad01ee8eeae89041.tar.gz",
+          "archive_sha256": "9bbd20ced5ad1ac5ac4d0e17f7a3b784fbdc920b6ff89f0b4abe999d5f535947",
+          "commit": "34b2a892f7441966265e3d60ad01ee8eeae89041",
+          "source_type": "official_commit_archive",
+          "source_url": "https://github.com/Jingkang50/OpenPSG.git"
+        }
+      },
+      "implementation_kind": "official_prediction_cache",
+      "manifest_path": "${PROJECT_ROOT}/checkpoints/sgg/manifests/openpsg_psgformer_psg.json",
+      "paradigm": "end_to_end_transformer",
+      "parameter_count": 52895900,
+      "perturbation_contract": {
+        "boxes_only": false,
+        "color_jitter": false,
+        "full": false,
+        "key_node_mask": false,
+        "noise": false,
+        "on_manifold_replacement": false,
+        "random_node_mask": false,
+        "swap": false,
+        "union_attenuation": false,
+        "union_zero": false,
+        "unrelated_node_mask": false,
+        "visual_noise": false
+      },
+      "supported_tasks": [
+        "sgdet"
+      ]
+    }
+  }
+}

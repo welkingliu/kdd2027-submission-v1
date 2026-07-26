@@ -1,0 +1,105 @@
+{
+  "experiment_1a/external_gqa": [
+    "results/reported/experiment_1a/external_gqa/gqa/summary.json"
+  ],
+  "experiment_1a/external_vrd": [
+    "results/reported/experiment_1a/external_vrd/vrd/summary.json"
+  ],
+  "experiment_1a/psg": [
+    "results/reported/experiment_1a/psg/cradio_v4_so400m/summary.json",
+    "results/reported/experiment_1a/psg/dinov2_b/summary.json",
+    "results/reported/experiment_1a/psg/radio_v25_b/summary.json",
+    "results/reported/experiment_1a/psg/resnet50/summary.json",
+    "results/reported/experiment_1a/psg/sam_vit_b/summary.json",
+    "results/reported/experiment_1a/psg/siglip2_b/summary.json"
+  ],
+  "experiment_1b": [
+    "results/reported/experiment_1b/cradio_v4_so400m/summary.json",
+    "results/reported/experiment_1b/dinov2_b/summary.json",
+    "results/reported/experiment_1b/radio_v25_b/summary.json",
+    "results/reported/experiment_1b/resnet50/summary.json",
+    "results/reported/experiment_1b/sam_vit_b/summary.json",
+    "results/reported/experiment_1b/siglip2_b/summary.json"
+  ],
+  "experiment_2/controlled": [
+    "results/reported/experiment_2/controlled/pysgg_motifs_vg_live/experiment_2.json",
+    "results/reported/experiment_2/controlled/pysgg_transformer_vg_live/experiment_2.json"
+  ],
+  "experiment_2/observational_oi": [
+    "results/reported/experiment_2/observational_oi/egtr_oi_official/experiment_2.json",
+    "results/reported/experiment_2/observational_oi/sgtr_oi_official/experiment_2.json"
+  ],
+  "experiment_2/observational_psg": [
+    "results/reported/experiment_2/observational_psg/openpsg_motifs_psg_official/experiment_2.json",
+    "results/reported/experiment_2/observational_psg/openpsg_vctree_psg_official/experiment_2.json"
+  ],
+  "experiment_2/observational_vg": [
+    "results/reported/experiment_2/observational_vg/egtr_vg_official/experiment_2.json",
+    "results/reported/experiment_2/observational_vg/kern_official/experiment_2.json",
+    "results/reported/experiment_2/observational_vg/sgtr_vg_official/experiment_2.json"
+  ],
+  "experiment_3": [
+    "results/reported/experiment_3/neural_motifs/experiment_3.json",
+    "results/reported/experiment_3/sgg_transformer/experiment_3.json",
+    "results/reported/experiment_3/validation_report.json"
+  ],
+  "experiment_4/kern_sgcls": [
+    "results/reported/experiment_4/kern_sgcls/summary.json",
+    "results/reported/experiment_4/kern_sgcls/vg/results.json"
+  ],
+  "experiment_4/matched_depth": [
+    "results/reported/experiment_4/matched_depth/shards/pysgg_motifs_vg_tritask/vg/summary.json",
+    "results/reported/experiment_4/matched_depth/shards/pysgg_motifs_vg_tritask/vg/vg/results.json",
+    "results/reported/experiment_4/matched_depth/shards/pysgg_transformer_vg_tritask/vg/summary.json",
+    "results/reported/experiment_4/matched_depth/shards/pysgg_transformer_vg_tritask/vg/vg/results.json"
+  ],
+  "experiment_4/native": [
+    "results/reported/experiment_4/native/shards/egtr_oi_official/oi/oi/results.json",
+    "results/reported/experiment_4/native/shards/egtr_oi_official/oi/summary.json",
+    "results/reported/experiment_4/native/shards/egtr_vg_official/vg/summary.json",
+    "results/reported/experiment_4/native/shards/egtr_vg_official/vg/vg/results.json",
+    "results/reported/experiment_4/native/shards/openpsg_motifs_psg_official/psg/psg/results.json",
+    "results/reported/experiment_4/native/shards/openpsg_motifs_psg_official/psg/summary.json",
+    "results/reported/experiment_4/native/shards/openpsg_psgformer_psg_official/psg/psg/results.json",
+    "results/reported/experiment_4/native/shards/openpsg_psgformer_psg_official/psg/summary.json",
+    "results/reported/experiment_4/native/shards/openpsg_psgtr_psg_official/psg/psg/results.json",
+    "results/reported/experiment_4/native/shards/openpsg_psgtr_psg_official/psg/summary.json",
+    "results/reported/experiment_4/native/shards/openpsg_vctree_psg_official/psg/psg/results.json",
+    "results/reported/experiment_4/native/shards/openpsg_vctree_psg_official/psg/summary.json",
+    "results/reported/experiment_4/native/shards/reltr_vg_official/vg/summary.json",
+    "results/reported/experiment_4/native/shards/reltr_vg_official/vg/vg/results.json",
+    "results/reported/experiment_4/native/shards/sgtr_oi_official/oi/oi/results.json",
+    "results/reported/experiment_4/native/shards/sgtr_oi_official/oi/summary.json",
+    "results/reported/experiment_4/native/shards/sgtr_vg_official/vg/summary.json",
+    "results/reported/experiment_4/native/shards/sgtr_vg_official/vg/vg/results.json"
+  ],
+  "experiment_5": [
+    "results/reported/experiment_5/experiment_5/grounding/TDE_Neural_Motifs/seed_17/mitigated_state_dict.pth",
+    "results/reported/experiment_5/experiment_5/grounding/TDE_Neural_Motifs/seed_17/mitigation_results.json",
+    "results/reported/experiment_5/experiment_5/grounding/TDE_Neural_Motifs/seed_23/mitigated_state_dict.pth",
+    "results/reported/experiment_5/experiment_5/grounding/TDE_Neural_Motifs/seed_23/mitigation_results.json",
+    "results/reported/experiment_5/experiment_5/grounding/TDE_Neural_Motifs/seed_31/mitigated_state_dict.pth",
+    "results/reported/experiment_5/experiment_5/grounding/TDE_Neural_Motifs/seed_31/mitigation_results.json",
+    "results/reported/experiment_5/experiment_5/shared_baselines/formal_before_test_entity_aligned.json",
+    "results/reported/experiment_5/experiment_5/summary.json",
+    "results/reported/experiment_5/experiment_5/supervised_control/TDE_Neural_Motifs/seed_17/mitigated_state_dict.pth",
+    "results/reported/experiment_5/experiment_5/supervised_control/TDE_Neural_Motifs/seed_17/mitigation_results.json",
+    "results/reported/experiment_5/experiment_5/supervised_control/TDE_Neural_Motifs/seed_17/test_full_split2_entity_aligned.json",
+    "results/reported/experiment_5/experiment_5/supervised_control/TDE_Neural_Motifs/seed_23/mitigated_state_dict.pth",
+    "results/reported/experiment_5/experiment_5/supervised_control/TDE_Neural_Motifs/seed_23/mitigation_results.json",
+    "results/reported/experiment_5/experiment_5/supervised_control/TDE_Neural_Motifs/seed_31/mitigated_state_dict.pth",
+    "results/reported/experiment_5/experiment_5/supervised_control/TDE_Neural_Motifs/seed_31/mitigation_results.json",
+    "results/reported/experiment_5/experiment_5_external/external/gqa/TDE_Neural_Motifs/grounding/seed_17/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/gqa/TDE_Neural_Motifs/grounding/seed_23/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/gqa/TDE_Neural_Motifs/grounding/seed_31/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/gqa/TDE_Neural_Motifs/supervised_control/seed_17/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/gqa/TDE_Neural_Motifs/supervised_control/seed_23/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/gqa/TDE_Neural_Motifs/supervised_control/seed_31/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/vrd/TDE_Neural_Motifs/grounding/seed_17/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/vrd/TDE_Neural_Motifs/grounding/seed_23/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/vrd/TDE_Neural_Motifs/grounding/seed_31/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/vrd/TDE_Neural_Motifs/supervised_control/seed_17/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/vrd/TDE_Neural_Motifs/supervised_control/seed_23/summary.json",
+    "results/reported/experiment_5/experiment_5_external/external/vrd/TDE_Neural_Motifs/supervised_control/seed_31/summary.json"
+  ]
+}

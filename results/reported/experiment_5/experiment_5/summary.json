@@ -1,0 +1,388 @@
+{
+  "architecture_family": "TDE Neural Motifs",
+  "by_mode": {
+    "grounding": {
+      "acceptance_passes": 1,
+      "after": {
+        "SGCls_R@50": {
+          "mean": 0.25389618755552323,
+          "n": 2,
+          "std": 0.0
+        },
+        "SGCls_mR@50": {
+          "mean": 0.132640336059513,
+          "n": 2,
+          "std": 0.0
+        },
+        "SGDet_R@50": {
+          "mean": 0.03769809490394122,
+          "n": 2,
+          "std": 1.1821647182379269e-05
+        },
+        "SGDet_mR@50": {
+          "mean": 0.02928848243110171,
+          "n": 2,
+          "std": 5.8857001606973935e-06
+        },
+        "object_ece_15": {
+          "mean": 0.3662599209034094,
+          "n": 2,
+          "std": 2.101403012155778e-06
+        },
+        "object_top1": {
+          "mean": 0.6329346049673523,
+          "n": 2,
+          "std": 0.0
+        }
+      },
+      "change_from_pretrained": {
+        "SGCls_R@50": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "SGCls_mR@50": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "SGDet_R@50": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "SGDet_mR@50": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "object_ece_15": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "object_top1": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        }
+      },
+      "runs": 3
+    },
+    "supervised_control": {
+      "acceptance_passes": 2,
+      "after": {
+        "SGCls_R@50": {
+          "mean": 0.2538999692746927,
+          "n": 2,
+          "std": 3.7817191695099783e-06
+        },
+        "SGCls_mR@50": {
+          "mean": 0.13264406879560856,
+          "n": 2,
+          "std": 3.732736095551914e-06
+        },
+        "SGDet_R@50": {
+          "mean": 0.03768976759318566,
+          "n": 2,
+          "std": 1.5422345217681876e-05
+        },
+        "SGDet_mR@50": {
+          "mean": 0.029303322852396133,
+          "n": 2,
+          "std": 1.0545811030297433e-05
+        },
+        "object_ece_15": {
+          "mean": 0.36625258615138345,
+          "n": 2,
+          "std": 6.994381897412749e-06
+        },
+        "object_top1": {
+          "mean": 0.6329346049673523,
+          "n": 2,
+          "std": 0.0
+        }
+      },
+      "change_from_pretrained": {
+        "SGCls_R@50": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "SGCls_mR@50": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "SGDet_R@50": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "SGDet_mR@50": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "object_ece_15": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        },
+        "object_top1": {
+          "mean": null,
+          "n": 0,
+          "std": null
+        }
+      },
+      "runs": 3
+    }
+  },
+  "dataset": "vg",
+  "experiment": "V_grounding_dependency_mitigation",
+  "fixed_protocol": {
+    "early_stopping_patience": 1,
+    "freeze_relation_parameters": true,
+    "learning_rate": 3e-05,
+    "max_mR_drop": 0.005,
+    "maximum_epochs": 5,
+    "minimum_epochs": 3,
+    "object_bias_delta_scale": 0.5,
+    "object_weight": 2.25,
+    "object_weight_delta_scale": 1.1,
+    "task_driven_object_focus": true,
+    "task_object_weight": 3.0,
+    "test_samples": 26446
+  },
+  "grounding_minus_supervised_control": {
+    "SGCls_R@50": {
+      "mean": -3.7817191695099783e-06,
+      "n": 2,
+      "std": 3.7817191695099783e-06
+    },
+    "SGCls_mR@50": {
+      "mean": -3.732736095551914e-06,
+      "n": 2,
+      "std": 3.732736095551914e-06
+    },
+    "SGDet_R@50": {
+      "mean": 8.327310755562589e-06,
+      "n": 2,
+      "std": 3.6006980353026075e-06
+    },
+    "SGDet_mR@50": {
+      "mean": -1.4840421294419828e-05,
+      "n": 2,
+      "std": 1.6431511190994827e-05
+    },
+    "object_ece_15": {
+      "mean": 7.334752025994762e-06,
+      "n": 2,
+      "std": 9.095784909568527e-06
+    },
+    "object_top1": {
+      "mean": 0.0,
+      "n": 2,
+      "std": 0.0
+    }
+  },
+  "rows": [
+    {
+      "acceptance_passed": true,
+      "after": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "before": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "change": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "result": "${EXPERIMENT5_RUN_ROOT}/supervised_control/TDE_Neural_Motifs/seed_17/mitigation_results.json",
+      "seed": 17,
+      "selected_epoch": 1,
+      "training_mode": "supervised_control"
+    },
+    {
+      "acceptance_passed": true,
+      "after": {
+        "SGCls_R@50": 0.25389618755552323,
+        "SGCls_mR@50": 0.132640336059513,
+        "SGDet_R@50": 0.03770518993840334,
+        "SGDet_mR@50": 0.029292777041365833,
+        "object_ece_15": 0.36625958053328084,
+        "object_top1": 0.6329346049673523
+      },
+      "before": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "change": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "result": "${EXPERIMENT5_RUN_ROOT}/supervised_control/TDE_Neural_Motifs/seed_23/mitigation_results.json",
+      "seed": 23,
+      "selected_epoch": 1,
+      "training_mode": "supervised_control"
+    },
+    {
+      "acceptance_passed": false,
+      "after": {
+        "SGCls_R@50": 0.25390375099386225,
+        "SGCls_mR@50": 0.1326478015317041,
+        "SGDet_R@50": 0.03767434524796798,
+        "SGDet_mR@50": 0.029313868663426428,
+        "object_ece_15": 0.366245591769486,
+        "object_top1": 0.6329346049673523
+      },
+      "before": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "change": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "result": "${EXPERIMENT5_RUN_ROOT}/supervised_control/TDE_Neural_Motifs/seed_31/mitigation_results.json",
+      "seed": 31,
+      "selected_epoch": 2,
+      "training_mode": "supervised_control"
+    },
+    {
+      "acceptance_passed": false,
+      "after": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "before": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "change": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "result": "${EXPERIMENT5_RUN_ROOT}/grounding/TDE_Neural_Motifs/seed_17/mitigation_results.json",
+      "seed": 17,
+      "selected_epoch": 1,
+      "training_mode": "grounding"
+    },
+    {
+      "acceptance_passed": true,
+      "after": {
+        "SGCls_R@50": 0.25389618755552323,
+        "SGCls_mR@50": 0.132640336059513,
+        "SGDet_R@50": 0.0377099165511236,
+        "SGDet_mR@50": 0.02929436813126241,
+        "object_ece_15": 0.36625781950039726,
+        "object_top1": 0.6329346049673523
+      },
+      "before": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "change": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "result": "${EXPERIMENT5_RUN_ROOT}/grounding/TDE_Neural_Motifs/seed_23/mitigation_results.json",
+      "seed": 23,
+      "selected_epoch": 1,
+      "training_mode": "grounding"
+    },
+    {
+      "acceptance_passed": false,
+      "after": {
+        "SGCls_R@50": 0.25389618755552323,
+        "SGCls_mR@50": 0.132640336059513,
+        "SGDet_R@50": 0.03768627325675884,
+        "SGDet_mR@50": 0.029282596730941014,
+        "object_ece_15": 0.3662620223064216,
+        "object_top1": 0.6329346049673523
+      },
+      "before": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "change": {
+        "SGCls_R@50": NaN,
+        "SGCls_mR@50": NaN,
+        "SGDet_R@50": NaN,
+        "SGDet_mR@50": NaN,
+        "object_ece_15": null,
+        "object_top1": null
+      },
+      "result": "${EXPERIMENT5_RUN_ROOT}/grounding/TDE_Neural_Motifs/seed_31/mitigation_results.json",
+      "seed": 31,
+      "selected_epoch": 1,
+      "training_mode": "grounding"
+    }
+  ],
+  "runs": 6,
+  "seeds": [
+    17,
+    23,
+    31
+  ],
+  "status": "complete",
+  "training_modes": [
+    "supervised_control",
+    "grounding"
+  ]
+}

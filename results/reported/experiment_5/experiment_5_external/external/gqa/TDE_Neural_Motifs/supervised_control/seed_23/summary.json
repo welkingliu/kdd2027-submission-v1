@@ -1,0 +1,128 @@
+{
+  "base": {
+    "endpoint_identity_disagreement_bootstrap_95ci": [
+      0.5216888293606237,
+      0.5932926031963665
+    ],
+    "endpoint_identity_disagreement_rate": 0.5570430755615234,
+    "object_ece_15_uncalibrated": 0.11629383285253425,
+    "object_macro_accuracy": 0.5810380271362997,
+    "object_macro_supported_classes": 132,
+    "object_top1": 0.6231505870819092,
+    "object_top1_bootstrap_95ci": [
+      0.6002661494398285,
+      0.6468578464328179
+    ],
+    "objects": 2298,
+    "predicate_hit_at_1": 0.5192083716392517,
+    "predicate_hit_at_1_bootstrap_95ci": [
+      0.4846136526761775,
+      0.555813848928188
+    ],
+    "predicate_macro_accuracy": 0.4735994518949349,
+    "predicate_macro_supported_classes": 28,
+    "relations": 1718,
+    "triplet_hit_at_1": 0.23632130026817322,
+    "triplet_hit_at_1_bootstrap_95ci": [
+      0.209858900871793,
+      0.26385601456355645
+    ]
+  },
+  "cache": "${PROJECT_ROOT}/data/derived/predictions/experiment_5_external/gqa/pysgg_tde_motifs_vg_live",
+  "cache_metadata": {
+    "architecture_family": "TDE-Motifs",
+    "checkpoint_sha256": "467da372633dbd77720cd3e7e5cc056552b86d957dd0ef4d571757e0786fc674",
+    "coverage": {
+      "retained_images": 604,
+      "retained_objects": 2298,
+      "retained_relations": 1718,
+      "skipped_images": 396,
+      "source_images": 1000,
+      "source_objects": 16407,
+      "source_relations": 49549
+    },
+    "dataset": "gqa",
+    "manifest": "${PROJECT_ROOT}/checkpoints/sgg/manifests/pysgg_tde_motifs_vg_live.json",
+    "manifest_sha256": "74de61e3ed2b0a5f7537409497b904e5dccc8534700a0afca1d394262eaa3560",
+    "mapping": {
+      "mapped_object_classes": 135,
+      "mapped_predicate_classes": 34,
+      "object_class_coverage": 0.087890625,
+      "policy": "normalized_exact_match_only",
+      "predicate_class_coverage": 0.1152542372881356,
+      "source_object_classes": 1536,
+      "source_predicate_classes": 295
+    },
+    "model": "pysgg_tde_motifs_vg_live",
+    "protocol": "GT-box shared-VG exact-overlap inference only",
+    "schema_version": "experiment_5_external_shared_vg_v1",
+    "skip_reasons": {
+      "unmapped_endpoint": 28138,
+      "unmapped_predicate": 19693
+    },
+    "source_ontology_id": "gqa:ca95bf32b61e8e2b",
+    "target_ontology_id": "vg150:3a81da8df801a1f5",
+    "vg_dictionary": {
+      "ontology_id": "vg150:3a81da8df801a1f5",
+      "path": "${PROJECT_ROOT}/data/vg/v1.4/VG-SGG-dicts.json",
+      "sha256": "6907eb91bffad24b540eed46ae4eb3f0d1ee953b792d03b72ceb2b073fd26e85"
+    }
+  },
+  "claim_scope": "Inference-only transfer on normalized exact VG label overlap. This is SGCls-aligned and is not native GQA/VRD SGDet.",
+  "evaluated": {
+    "endpoint_identity_disagreement_bootstrap_95ci": [
+      0.4188031709203403,
+      0.4944375543852538
+    ],
+    "endpoint_identity_disagreement_rate": 0.45518043637275696,
+    "object_ece_15_uncalibrated": 0.0341559837324894,
+    "object_macro_accuracy": 0.6495116821011129,
+    "object_macro_supported_classes": 132,
+    "object_top1": 0.7088772654533386,
+    "object_top1_bootstrap_95ci": [
+      0.6881039286735251,
+      0.7293526776230554
+    ],
+    "objects": 2298,
+    "predicate_hit_at_1": 0.5192083716392517,
+    "predicate_hit_at_1_bootstrap_95ci": [
+      0.4846136526761775,
+      0.555813848928188
+    ],
+    "predicate_macro_accuracy": 0.4735994518949349,
+    "predicate_macro_supported_classes": 28,
+    "relations": 1718,
+    "triplet_hit_at_1": 0.2951105833053589,
+    "triplet_hit_at_1_bootstrap_95ci": [
+      0.26218995082938157,
+      0.32763734397314637
+    ]
+  },
+  "experiment": "V_external_inference_only",
+  "mitigation_state": {
+    "path": "${EXPERIMENT5_RUN_ROOT}/supervised_control/TDE_Neural_Motifs/seed_23/mitigated_state_dict.pth",
+    "seed": 23,
+    "selected_epoch": 1,
+    "sha256": "02af8f737cb14f653635dbe1ab477b90e8d72b1a5aea8a6ec028aceb6077a92b",
+    "training_mode": "supervised_control"
+  },
+  "paired_change_from_base": {
+    "object_top1": 0.08572667837142944,
+    "object_top1_bootstrap_95ci": [
+      0.07034713754110328,
+      0.10110174108620826
+    ],
+    "predicate_hit_at_1": 0.0,
+    "predicate_hit_at_1_bootstrap_95ci": [
+      0.0,
+      0.0
+    ],
+    "triplet_hit_at_1": 0.05878928303718567,
+    "triplet_hit_at_1_bootstrap_95ci": [
+      0.043009864036257,
+      0.07633181609362152
+    ]
+  },
+  "paper_evidence_tier": "shared_vg_gt_box_external",
+  "schema_version": "experiment_5_external_shared_vg_v1"
+}

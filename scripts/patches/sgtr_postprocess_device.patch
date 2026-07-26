@@ -1,0 +1,27 @@
+--- a/cvpods/modeling/meta_arch/one_stage_sgg/rel_detr_inference.py
++++ b/cvpods/modeling/meta_arch/one_stage_sgg/rel_detr_inference.py
+@@ -472,6 +472,7 @@
+             non_self_conn_idx = (rel_match_obj_ids_flat - rel_match_sub_ids_flat) != 0
+             sub_obj_iou_check = self_iou[pred_rel_triplet[:, SUB_IDX].long(), pred_rel_triplet[:, OBJ_IDX].long()] < 0.95
+             non_self_conn_idx = torch.logical_and(non_self_conn_idx, sub_obj_iou_check)
++            non_self_conn_idx = non_self_conn_idx.cpu()
+ 
+             # first stage filtering
+             if post_proc_filtering:
+@@ -561,9 +562,13 @@
+                     else:
+                         pred_idx_set.append(new_come_pred_idx)
+ 
+-                pred_idx_set = torch.Tensor(pred_idx_set).long().to(device)
+-                bin_mask = torch.zeros((pred_rel_triplet.shape[0]), dtype=torch.bool).to(
+-                    device
++                pred_idx_set = torch.tensor(
++                    pred_idx_set, dtype=torch.long, device=pred_rel_triplet.device
++                )
++                bin_mask = torch.zeros(
++                    pred_rel_triplet.shape[0],
++                    dtype=torch.bool,
++                    device=pred_rel_triplet.device,
+                 )
+                 bin_mask[pred_idx_set] = True
+                 pred_rel_triplet_selected = pred_rel_triplet[bin_mask]
