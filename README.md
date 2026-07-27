@@ -56,6 +56,22 @@ prefixed progress, writes a dedicated log, and supports `RESUME=1`.
 - Experiment V is the preregistered one-family TDE-Motifs study with learning
   rate `3e-5`, frozen relation parameters, and three seeds.
 
+## Checkpoint Assets
+
+The validated paper setup contains 17 runtime manifests that reference 21
+unique SGG checkpoint files. This includes released checkpoints for
+TDE-Motifs, EGTR, KERN, OpenPSG Motifs, PSGFormer, PSGTR, VCTree, BGNN, RelTR,
+and SGTR, together with the final PredCls/SGCls/SGDet checkpoints for the
+trained Motifs and Transformer panels. The SGG checkpoints occupy 28.6 GiB.
+The six Experiment I-A foundation backbones occupy a further 4.4 GiB.
+
+Checkpoints are not tracked in Git. Acquire released weights through
+`THIRD_PARTY_ASSETS.md` and place every file at its declared relative path.
+Each runtime manifest records the expected SHA-256 value, model family,
+ontology, supported task, and evaluation contract. Periodic training
+snapshots, prediction caches, datasets, smoke outputs, and logs are not part
+of the checkpoint bundle.
+
 See `REPRODUCIBILITY.md` for the full command and output map,
 `THIRD_PARTY_ASSETS.md` for provenance and hashes, and
 `UPLOAD_CHECKLIST.md` for the KDD artifact checklist.
