@@ -1,3 +1,4 @@
+
 # GroundedSGG-Bench
 
 GroundedSGG-Bench decomposes scene graph generation into spatial support,
@@ -64,6 +65,11 @@ TDE-Motifs, EGTR, KERN, OpenPSG Motifs, PSGFormer, PSGTR, VCTree, BGNN, RelTR,
 and SGTR, together with the final PredCls/SGCls/SGDet checkpoints for the
 trained Motifs and Transformer panels. The SGG checkpoints occupy 28.6 GiB.
 The six Experiment I-A foundation backbones occupy a further 4.4 GiB.
+
+The validated 29.7 GiB archive bundle is available from the
+[read-only OneDrive folder](https://1drv.ms/f/c/bbaa76995e4a814f/IgCQZ7iYJDccSJI8ZuWpmCHbAYAUMITf-03j9fxU5yVb5vg?e=rd23fq).
+Download `README.md`, `SHA256SUMS`, and the eight `.tar.zst` parts, then verify
+every part before extraction.
 
 Checkpoints are not tracked in Git. Acquire released weights through
 `THIRD_PARTY_ASSETS.md` and place every file at its declared relative path.
