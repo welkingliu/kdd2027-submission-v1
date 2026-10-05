@@ -8,15 +8,43 @@ submission snapshot remains traceable. This update contains research artifacts,
 not reviewer reports or the private author response.
 
 - **Revised code and evidence:** [rebuttal-20261005](https://github.com/welkingliu/rebuttal-20261005).
-  Verified release commit: `d4c4742537cd2ac8d5228e7551680b8322a1bf86`.
-  All 432 files listed in its `MANIFEST.sha256` passed checksum verification.
-- **Paired prediction records:** [OneDrive read-only folder](https://1drv.ms/f/c/bbaa76995e4a814f/IgDQLM6an3FGR4QcPttIInadAfUA6Bp_-s6IHhmloTWIS98?e=EeRqaO).
-  Contains `paired_channel_records_20261005.zip`, `README.md`, and `SHA256SUMS`.
+  The additional matched-control revision is commit
+  `a469a347b3fac32cbdaba7fbbe017df2896db5e8` (450 files covered by
+  `MANIFEST.sha256`, locally verified). Earlier revision `d4c4742` remains
+  in the repository history; do not confuse its 432-file manifest with this update.
+- **Prediction records and supplemental checkpoints:** [OneDrive read-only folder](https://1drv.ms/f/c/bbaa76995e4a814f/IgDQLM6an3FGR4QcPttIInadAfUA6Bp_-s6IHhmloTWIS98?e=qabT4l).
+  The root retains `paired_channel_records_20261005.zip`, `README.md`, and `SHA256SUMS`.
   The ZIP contains 4,000 NPZ records across two model/task runs and is
   2,510,792,544 bytes (approximately 2.34 GiB).
   An unsigned-in download on 2026-10-05 matched the published SHA-256 checksum
   and passed ZIP integrity checks. SHA-256:
   `f2d2e803044031c2e58f8a3c6459e20e82ca4788ea443e488d9b836f9cbcae31`.
+
+### Additional Controls and Checkpoints
+
+- `evidence/matched_controls_20261005/`: the new
+  `matched_identity_controls_20261005.zip`, with 4,000 image-level JSON/NPZ pairs
+  and semantic paired statistics; 6,393,267 bytes. SHA-256:
+  `48f292e02221e986aaa7cd1042675338b9c7ca4ccf84578cabc8a44c9ed52995`.
+- `checkpoints/revision_20261005/`: three newly trained plain Neural Motifs
+  task checkpoints and the corrected Transformer SGDet checkpoint, with
+  configuration, provenance and checksums (four ZIPs, approximately 4.95 GiB).
+  Apply the bundled Transformer inference overrides, not just its saved config.
+- These supplements passed local checksum checks. Cloud upload/download
+  verification of the new files remains pending; the historical archive's
+  successful download check does not certify the supplements.
+
+With visual evidence and replacement sites fixed, reference labels in the
+frequency-prior channel improve predicate Top-1 by 5.45 pp for Motifs SGCls
+and 8.80 pp for Transformer SGDet. Frequency-stratum-matched incorrect labels
+instead reduce accuracy by 10.40--11.37 and 14.21--14.71 pp across three
+intervention seeds. These post-hoc diagnostics use previously inspected images;
+they are not independent confirmation or deployable repairs. Semantic-channel
+contrasts remain model dependent. The joint SGCls/SGDet repair gate remains unmet.
+
+See the revised repository's `evidence/R23_controls/` for summaries, protocols,
+source provenance and the archive checksum. Preserve the original artifacts;
+new controls do not silently replace historical records.
 
 ### How to Interpret the Update
 
