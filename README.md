@@ -1,6 +1,48 @@
 
 # GroundedSGG-Bench
 
+## 2026-10-05 Rebuttal Update
+
+Updated code and selected evidence are published separately so that the original
+submission snapshot remains traceable. This update contains research artifacts,
+not reviewer reports or the private author response.
+
+- **Revised code and evidence:** [rebuttal-20261005](https://github.com/welkingliu/rebuttal-20261005).
+  Verified release commit: `d4c4742537cd2ac8d5228e7551680b8322a1bf86`.
+  All 432 files listed in its `MANIFEST.sha256` passed checksum verification.
+- **Paired prediction records:** [OneDrive read-only folder](https://1drv.ms/f/c/bbaa76995e4a814f/IgDQLM6an3FGR4QcPttIInadAfUA6Bp_-s6IHhmloTWIS98?e=EeRqaO).
+  Contains `paired_channel_records_20261005.zip`, `README.md`, and `SHA256SUMS`.
+  The ZIP contains 4,000 NPZ records across two model/task runs and is
+  2,510,792,544 bytes (approximately 2.34 GiB).
+  An unsigned-in download on 2026-10-05 matched the published SHA-256 checksum
+  and passed ZIP integrity checks. SHA-256:
+  `f2d2e803044031c2e58f8a3c6459e20e82ca4788ea443e488d9b836f9cbcae31`.
+
+### How to Interpret the Update
+
+- Fixed-visual paired interventions separate semantic-class and frequency-prior
+  inputs. Ground-truth label substitutions are diagnostic, not deployable repairs.
+- Corrected Motifs/Transformer task results pass the declared reference-metric
+  tolerance; this does not establish identical upstream training settings.
+- A bounded SAM probe refit checks optimization sensitivity. Raw-feature refits
+  are distinct from the historical normalized-probe results.
+- **Original Experiment V is reinterpreted as affine object-score calibration.**
+  Its nominal relation penalties do not backpropagate into the updated readout.
+  Its results do not demonstrate effective relation-protective training.
+- **Historical Experiment III paired contrasts and confidence intervals are
+  withdrawn from revised claims** because the paired records were not recovered.
+- Exploratory repairs have not established joint SGCls/SGDet acceptance;
+  an SGCls-only pass is not a successful SGDet repair.
+
+Use the revised repository's `README.md` and `REPRODUCIBILITY.md` for current
+checks and deployment boundaries. The instructions and snapshots below are
+historical; their presence is not a claim that every original result remains
+validated. Distribution checks are not independent full-experiment reproduction.
+No dataset images or third-party checkpoints are included in this paired archive.
+The linked destinations are public, non-anonymous resources.
+
+## Original Submission Snapshot
+
 GroundedSGG-Bench decomposes scene graph generation into spatial support,
 object identity, and relation prediction. The release contains the benchmark
 code, fixed experiment contracts, paper-result snapshots, and one entry point
